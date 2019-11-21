@@ -232,55 +232,53 @@ transManager.initTransSDK(token, "/sdcard/",
     int pushMediaStream(int streamType, int nalType, byte[] streamData, long timeStamp);
 ```
 
-{% hint style="info" %}
-#### 注意： <a id="toc_8"></a>
-
-如果操作的SDK相关的类的时候是在非主进程中的话，那么获取权限的部分可能会存在一定的问题，这个时候需要在AndnroidManifest.xml中添加如下申明**：**
-
-\*\*\*\*
-
-```markup
-<!-- 如果是跨进程的，那么申明一下所在的进程-->
-        <receiver android:name="com.tuya.smart.aiipc.base.permission.IPCBroadcastReceiver"
-            android:process=":x">
-            <intent-filter>
-                <action android:name="com.tuya.smart.aiipc.base.permission.BROADCAST_ACTION"/>
-            </intent-filter>
-        </receiver>
-```
-
-将android:process处的值改为和所在进程一样的值。ex:在如下的进程操作的SDK
-
-
-
-```markup
-<service
-    android:name="com.tuya.smart_doorbell.service.DoorBellService"
-    android:process=":x"  //上面的广播需要和次值保持一致
-    android:enabled="true"
-    android:exported="true">
-</service>
-```
-
-在推送流的时候，关键帧之前必须要加上SPS和PPS的数据
-
-
-
-```java
-if (info.flags == BUFFER_FLAG_KEY_FRAME) {
-    outputStream.reset();
-    try {
-        outputStream.write(SPS);
-        outputStream.write(PPS);
-        outputStream.write(bytes);
-    } catch (IOException e) {
-        e.printStackTrace();
-    }
-    bytes = outputStream.toByteArray();
-    type = Common.NAL_TYPE.NAL_TYPE_IDR;
-}
-```
-{% endhint %}
+> #### 注意： <a id="toc_8"></a>
+> 
+> 如果操作的SDK相关的类的时候是在非主进程中的话，那么获取权限的部分可能会存在一定的问题，这个时候需要在AndnroidManifest.xml中添加如下申明**：**
+> 
+> \*\*\*\*
+> 
+> ```markup
+> <!-- 如果是跨进程的，那么申明一下所在的进程-->
+>         <receiver android:name="com.tuya.smart.aiipc.base.permission.IPCBroadcastReceiver"
+>             android:process=":x">
+>             <intent-filter>
+>                 <action android:name="com.tuya.smart.aiipc.base.permission.BROADCAST_ACTION"/>
+>             </intent-filter>
+>         </receiver>
+> ```
+> 
+> 将android:process处的值改为和所在进程一样的值。ex:在如下的进程操作的SDK
+> 
+> 
+> 
+> ```markup
+> <service
+>     android:name="com.tuya.smart_doorbell.service.DoorBellService"
+>     android:process=":x"  //上面的广播需要和次值保持一致
+>     android:enabled="true"
+>     android:exported="true">
+> </service>
+> ```
+> 
+> 在推送流的时候，关键帧之前必须要加上SPS和PPS的数据
+> 
+> 
+> 
+> ```java
+> if (info.flags == BUFFER_FLAG_KEY_FRAME) {
+>     outputStream.reset();
+>     try {
+>         outputStream.write(SPS);
+>         outputStream.write(PPS);
+>         outputStream.write(bytes);
+>     } catch (IOException e) {
+>         e.printStackTrace();
+>     }
+>     bytes = outputStream.toByteArray();
+>     type = Common.NAL_TYPE.NAL_TYPE_IDR;
+> }
+> ```
 
 
 

@@ -6,7 +6,6 @@ description: Android物联网应用接入涂鸦平台所使用的SDK
 
 Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](https://github.com/TuyaInc/tuyasmart_android_device_sdk_demo)
 
-{% file src=".gitbook/assets/ipc-sdk-0.1.6.aar \(2\).zip" %}
 
 * **IPC\_SDK for v0.1.6 \(2019-11-08\)**
 
