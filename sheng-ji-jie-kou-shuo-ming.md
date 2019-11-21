@@ -2,7 +2,7 @@
 
 ### UML
 
-![&#x5347;&#x7EA7;&#x6D41;&#x7A0B;](.gitbook/assets/image.png)
+![&#x5347;&#x7EA7;&#x6D41;&#x7A0B;](assets/image.png)
 
 1. tuya app 发现可以升级后，会提示用户升级，当用户点击升级时会回向 tuya server 发送设备升级请求
 2. tuya server 转发 升级请求至 ipc\_sdk 
@@ -29,7 +29,7 @@
 
 ### 代码截图
 
-![](.gitbook/assets/image%20%281%29.png)
+![](assets/image%20%281%29.png)
 
-![](.gitbook/assets/image%20%282%29.png)
+![](assets/image%20%282%29.png)
 
