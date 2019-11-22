@@ -15,6 +15,7 @@ Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](h
   * 新增mqtt配网
   * 默认支持mqtt配网，修复了打包依赖的问题 **\(2019-11-13\)**
   * 修复了配网连接失败多次回调的问题 **\(2019-11-14\)**
+  * 修复夏令时时区错误 **\(2019-11-22\)**
 
   **IPC\_SDK for v0.1.5 \(2019-10-25\)**
 
