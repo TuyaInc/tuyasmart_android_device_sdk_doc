@@ -255,7 +255,107 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="qa">Q&amp;A</h1>
+                                <h1 id="faq">FAQ</h1>
+<ul>
+<li>&#x5982;&#x4F55;&#x914D;&#x7F6E;&#x89C6;&#x9891;/&#x97F3;&#x9891;&#x53C2;&#x6570;</li>
+</ul>
+<pre><code class="lang-java">IParamConfigManager configManager = IPCServiceManager.getInstance()
+.getService(IPCServiceManager.IPCService.MEDIA_PARAM_SERVICE);
+
+configManager.setInt(<span class="hljs-keyword">int</span> channelIndex, String key, <span class="hljs-keyword">int</span> value);
+</code></pre>
+<blockquote>
+<p>&#x53EF;&#x914D;&#x7F6E;&#x53C2;&#x6570;&#x8BF7;&#x67E5;&#x770B; Common.ParamKey</p>
+</blockquote>
+<pre><code class="lang-java"><span class="hljs-comment">//example</span>
+
+<span class="hljs-comment">//&#x4E3B;&#x7801;&#x6D41;&#x8BBE;&#x7F6E;&#x5E27;&#x6570;</span>
+configManager.setInt(Common.ChannelIndex.E_CHANNEL_VIDEO_MAIN, Common.ParamKey.KEY_VIDEO_FRAME_RATE, <span class="hljs-number">24</span>);
+
+<span class="hljs-comment">//&#x5B50;&#x7801;&#x6D41;&#x8BBE;&#x7F6E;I&#x5E27;&#x95F4;&#x9694;</span>
+configManager.setInt(Common.ChannelIndex.E_CHANNEL_VIDEO_SUB, Common.ParamKey.KEY_VIDEO_I_FRAME_INTERVAL, <span class="hljs-number">2</span>);
+
+<span class="hljs-comment">//&#x4E3B;&#x97F3;&#x9891;&#x6D41;&#x8BBE;&#x7F6E;&#x91C7;&#x6837;&#x7387;</span>
+configManager.setInt(Common.ChannelIndex.E_CHANNEL_AUDIO, Common.ParamKey.KEY_AUDIO_SAMPLE_RATE, <span class="hljs-number">8000</span>);
+</code></pre>
+<ul>
+<li>&#x600E;&#x4E48;&#x5F00;&#x542F;&#x89C6;&#x9891;&#x6D41;&#x4F20;&#x8F93;</li>
+</ul>
+<blockquote>
+<p>&#x8BF7;&#x67E5;&#x770B;SDK&#x521D;&#x59CB;&#x5316;&#x6587;&#x6863;&#x7684;&#x201C;&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x201D;</p>
+</blockquote>
+<ul>
+<li>&#x5982;&#x4F55;&#x83B7;&#x5F97;&#x8BED;&#x97F3;&#x6570;&#x636E;</li>
+</ul>
+<pre><code class="lang-java">IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
+transManager.addAudioTalkCallback(<span class="hljs-keyword">new</span> AudioTalkCallback() {
+                    <span class="hljs-meta">@Override</span>
+                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAudioTalkData</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] data)</span> </span>{
+                        <span class="hljs-comment">//&#x5904;&#x7406;&#x97F3;&#x9891;&#x6570;&#x636E;</span>
+                    }
+                });
+</code></pre>
+<ul>
+<li>&#x5982;&#x4F55;&#x4F20;&#x9012;&#x4FE1;&#x53F7;&#x5F3A;&#x5EA6;</li>
+</ul>
+<pre><code class="lang-java">IControllerManager controllerManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.CONTROLLER_SERVICE);
+
+<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x4FE1;&#x53F7;&#x503C;</span>
+controllerManager.setQueryCallback(event -&gt; {
+    <span class="hljs-keyword">if</span> (event == IMediaTransManager.QueryEvent.QUERY_RSSI) {
+    <span class="hljs-comment">//&#x4FE1;&#x53F7;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-number">50</span>;
+    }
+});
+</code></pre>
+<ul>
+<li>&#x5982;&#x4F55;&#x77E5;&#x9053;app&#x662F;&#x5426;&#x5728;&#x770B;&#x89C6;&#x9891;  </li>
+</ul>
+<blockquote>
+<p>&#x8BF7;&#x67E5;&#x770B;SDK API&#x7684;&quot;P2P&quot;</p>
+</blockquote>
+<ul>
+<li>&#x5FC3;&#x8DF3;&#x65F6;&#x95F4;&#x591A;&#x957F;  </li>
+</ul>
+<blockquote>
+<p>60s</p>
+</blockquote>
+<ul>
+<li>&#x6211;&#x7684;&#x8BBE;&#x5907;&#x4E0D;&#x652F;&#x6301;&#x84DD;&#x7259;&#x6709;&#x5F71;&#x54CD;&#x5417;</li>
+</ul>
+<blockquote>
+<p>&#x4E0D;&#x80FD;&#x4F7F;&#x7528;&#x84DD;&#x7259;&#x914D;&#x7F51;&#x529F;&#x80FD;</p>
+</blockquote>
+<ul>
+<li>&#x6211;&#x6B63;&#x5E38;&#x7684;h264&#x683C;&#x5F0F;&#x600E;&#x4E48;&#x64AD;&#x653E;&#x4E0D;&#x51FA;&#x6765;</li>
+</ul>
+<blockquote>
+<p>&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#x6BCF;&#x4E00;&#x4E2A;IDR&#x5E27;&#x524D;&#x6709;SPS&#x548C;PPS<br>&#x53EF;&#x4EE5;&#x53C2;&#x8003;demo&#x4E2D;&#x7684;&#x7C7B; <code>H264FileVideoCapture</code></p>
+</blockquote>
+<ul>
+<li>&#x600E;&#x4E48;&#x4E00;&#x76F4;&#x663E;&#x793A;&#x6B63;&#x5728;&#x83B7;&#x53D6;&#x6D41;</li>
+</ul>
+<blockquote>
+<p>&#x53EF;&#x80FD;&#x662F;p2p&#x6253;&#x6D1E;&#x5931;&#x8D25;&#xFF0C;&#x91CD;&#x542F;&#x6D82;&#x9E26;&#x667A;&#x80FD;app&#x8BD5;&#x8BD5;&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x52A0;&#x5BC6;&#x901A;&#x9053;&#x6784;&#x5EFA;&#x5931;&#x8D25;&#x662F;&#x4EC0;&#x4E48;&#x60C5;&#x51B5;</li>
+</ul>
+<blockquote>
+<p>APP&#x7AEF;&#x770B;&#x4E0B;&#x8BBE;&#x5907;&#x662F;&#x5426;&#x79BB;&#x7EBF;&#xFF0C;&#x79BB;&#x7EBF;&#x9700;&#x8981;&#x91CD;&#x8FDE;&#x8BBE;&#x5907;&#x3002;&#x5982;&#x679C;&#x5728;&#x7EBF;&#x5219;&#x5C1D;&#x8BD5;&#x9000;&#x51FA;&#x8BBE;&#x5907;&#x9762;&#x677F;&#x91CD;&#x8FDB;&#x3002;</p>
+</blockquote>
+<ul>
+<li>&#x5982;&#x4F55;&#x53D1;&#x9001;&#x8B66;&#x62A5;&#x6216;&#x8005;&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;</li>
+</ul>
+<blockquote>
+<p><a href="sdk-api.html#&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;">&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;API</a></p>
+</blockquote>
+<ul>
+<li>&#x600E;&#x4E48;&#x53D1;&#x8D77;&#x89C6;&#x9891;&#x901A;&#x8BDD;</li>
+<li>&#x600E;&#x4E48;&#x5904;&#x7406;dp&#x70B9;&#xFF0C;&#x5B9A;&#x4E49;&#x600E;&#x4E48;&#x770B;</li>
+<li>&#x7CFB;&#x7EDF;&#x5B58;&#x50A8;&#x8DDF;&#x6211;&#x7CFB;&#x7EDF;&#x7684;&#x663E;&#x793A;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x600E;&#x4E48;&#x81EA;&#x5B9A;&#x4E49;&#x7CFB;&#x7EDF;&#x5B58;&#x50A8;</li>
+<li>&#x8BED;&#x97F3;&#x7684;&#x6570;&#x636E;&#x662F;&#x4EC0;&#x4E48;&#x683C;&#x5F0F;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x600E;&#x4E48;&#x53BB;&#x64AD;&#x653E;</li>
+</ul>
 
                                 
                                 </section>
@@ -295,7 +395,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Q&A","level":"1.6","depth":1,"previous":{"title":"SDK API","level":"1.5","depth":1,"path":"sdk-api.md","ref":"sdk-api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"q-and-a.md","mtime":"2019-11-21T02:56:49.442Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-11-22T10:14:48.916Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Q&A","level":"1.6","depth":1,"previous":{"title":"SDK API","level":"1.5","depth":1,"path":"sdk-api.md","ref":"sdk-api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"q-and-a.md","mtime":"2019-12-11T02:35:29.506Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T02:52:23.270Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
