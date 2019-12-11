@@ -185,7 +185,7 @@ public interface IDeviceManager {
 }
 ```
 
-### 移动侦测
+### <div id="移动侦测">移动侦测</div>
 
 ```java
 IFeatureManager featureManager = IPCServiceManager.getInstance()
@@ -270,7 +270,7 @@ public interface IFeatureManager {
 }
 ```
 
-### 低功耗模式
+### *低功耗模式（标准版暂未包含）
 
 ```java
 class TransJNIInterface {
@@ -312,10 +312,25 @@ class TransJNIInterface {
     
     /**
      * 设置P2P事件回调
+     * @param P2PEventCallback: callback of P2PEvent
+     * 
      */
     public void setP2pEventCallback(P2PEventCallback cb);
-    
 }
+
+//p2p事件定义
+enum P2PEvent{
+        UNKNOW(-1),
+        TRANS_LIVE_VIDEO_START(0),  /**video 直播开始请求*/
+        TRANS_LIVE_VIDEO_STOP(1),   /**video 直播结束结束*/
+        TRANS_LIVE_AUDIO_START(2),  /**audio 直播开始请求*/
+        TRANS_LIVE_AUDIO_STOP(3),   /**audio 直播开始请求*/
+
+        TRAN_VIDEO_CLARITY_SET(4), /**< 设置视频直播清晰度 ，参数为*/
+
+        TRANS_SPEAKER_START(16),   /**对讲请求 */
+        TRANS_SPEAKER_STOP(17);
+        }
 ```
 
 ### 云存储
