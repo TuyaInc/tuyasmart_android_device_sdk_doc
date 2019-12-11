@@ -58,7 +58,7 @@
 
     
     
-    <link rel="prev" href="sdk-api.html" />
+    <link rel="prev" href="sdk-api/other.html" />
     
 
     </head>
@@ -184,9 +184,9 @@
             
         </li>
     
-        <li class="chapter " data-level="1.5" data-path="sdk-api.html">
+        <li class="chapter " data-level="1.5" data-path="sdk-api/">
             
-                <a href="sdk-api.html">
+                <a href="sdk-api/">
             
                     
                     SDK API
@@ -194,6 +194,129 @@
                 </a>
             
 
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="sdk-api/mqtt.html">
+            
+                <a href="sdk-api/mqtt.html">
+            
+                    
+                    MQTT服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="sdk-api/netconfig.html">
+            
+                <a href="sdk-api/netconfig.html">
+            
+                    
+                    配网服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="sdk-api/dp.html">
+            
+                <a href="sdk-api/dp.html">
+            
+                    
+                    DP控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="sdk-api/device.html">
+            
+                <a href="sdk-api/device.html">
+            
+                    
+                    设备信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="sdk-api/cloud.html">
+            
+                <a href="sdk-api/cloud.html">
+            
+                    
+                    云存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="sdk-api/motion.html">
+            
+                <a href="sdk-api/motion.html">
+            
+                    
+                    移动侦测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="sdk-api/low.html">
+            
+                <a href="sdk-api/low.html">
+            
+                    
+                    低功耗
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="sdk-api/stream.html">
+            
+                <a href="sdk-api/stream.html">
+            
+                    
+                    音视频流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.9" data-path="sdk-api/other.html">
+            
+                <a href="sdk-api/other.html">
+            
+                    
+                    其他API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
             
         </li>
     
@@ -282,7 +405,7 @@ configManager.setInt(Common.ChannelIndex.E_CHANNEL_AUDIO, Common.ParamKey.KEY_AU
 <li>&#x600E;&#x4E48;&#x5F00;&#x542F;&#x89C6;&#x9891;&#x6D41;&#x4F20;&#x8F93;</li>
 </ul>
 <blockquote>
-<p>&#x8BF7;&#x67E5;&#x770B;SDK&#x521D;&#x59CB;&#x5316;&#x6587;&#x6863;&#x7684;&#x201C;&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x201D;</p>
+<p>&#x8BF7;&#x67E5;&#x770B;<a href="sdk-chu-shi-hua.html#&#x5F00;&#x59CB;&#x63A8;&#x6D41;">&#x521D;&#x59CB;&#x5316;&#x6587;&#x6863; &#x201C;&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x201D;&#x90E8;&#x5206;</a></p>
 </blockquote>
 <ul>
 <li>&#x5982;&#x4F55;&#x83B7;&#x5F97;&#x8BED;&#x97F3;&#x6570;&#x636E;</li>
@@ -312,7 +435,7 @@ controllerManager.setQueryCallback(event -&gt; {
 <li>&#x5982;&#x4F55;&#x77E5;&#x9053;app&#x662F;&#x5426;&#x5728;&#x770B;&#x89C6;&#x9891;  </li>
 </ul>
 <blockquote>
-<p>&#x8BF7;&#x67E5;&#x770B;SDK API&#x7684;&quot;P2P&quot;</p>
+<p>&#x901A;&#x8FC7;<a href="sdk-api/stream.html">P2P API</a>&#x83B7;&#x53D6;&#x56DE;&#x8C03;</p>
 </blockquote>
 <ul>
 <li>&#x5FC3;&#x8DF3;&#x65F6;&#x95F4;&#x591A;&#x957F;  </li>
@@ -330,7 +453,7 @@ controllerManager.setQueryCallback(event -&gt; {
 <li>&#x6211;&#x6B63;&#x5E38;&#x7684;h264&#x683C;&#x5F0F;&#x600E;&#x4E48;&#x64AD;&#x653E;&#x4E0D;&#x51FA;&#x6765;</li>
 </ul>
 <blockquote>
-<p>&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#x6BCF;&#x4E00;&#x4E2A;IDR&#x5E27;&#x524D;&#x6709;SPS&#x548C;PPS<br>&#x53EF;&#x4EE5;&#x53C2;&#x8003;demo&#x4E2D;&#x7684;&#x7C7B; <code>H264FileVideoCapture</code></p>
+<p>&#x9700;&#x8981;&#x4F7F;&#x7528;&#x7279;&#x5B9A;&#x7684;&#x7F16;&#x7801;&#x683C;&#x5F0F;&#xFF0C;&#x5373;&#x4FDD;&#x8BC1;&#x6BCF;&#x4E00;&#x4E2A;IDR&#x5E27;&#x524D;&#x6709;SPS&#x548C;PPS<br>&#x53EF;&#x4EE5;&#x53C2;&#x8003;demo&#x4E2D;&#x7684;&#x7C7B; <code>H264FileVideoCapture</code></p>
 </blockquote>
 <ul>
 <li>&#x600E;&#x4E48;&#x4E00;&#x76F4;&#x663E;&#x793A;&#x6B63;&#x5728;&#x83B7;&#x53D6;&#x6D41;</li>
@@ -348,14 +471,31 @@ controllerManager.setQueryCallback(event -&gt; {
 <li>&#x5982;&#x4F55;&#x53D1;&#x9001;&#x8B66;&#x62A5;&#x6216;&#x8005;&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;</li>
 </ul>
 <blockquote>
-<p><a href="sdk-api.html#&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;">&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;API</a></p>
+<p><a href="sdk-api/motion.html">&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;API</a></p>
 </blockquote>
 <ul>
 <li>&#x600E;&#x4E48;&#x53D1;&#x8D77;&#x89C6;&#x9891;&#x901A;&#x8BDD;</li>
+</ul>
+<blockquote>
+</blockquote>
+<ul>
 <li>&#x600E;&#x4E48;&#x5904;&#x7406;dp&#x70B9;&#xFF0C;&#x5B9A;&#x4E49;&#x600E;&#x4E48;&#x770B;</li>
+</ul>
+<blockquote>
+<p>&#x8BF7;&#x67E5;&#x770B;<a href="sdk-api/dp.html">DP API</a></p>
+</blockquote>
+<ul>
 <li>&#x7CFB;&#x7EDF;&#x5B58;&#x50A8;&#x8DDF;&#x6211;&#x7CFB;&#x7EDF;&#x7684;&#x663E;&#x793A;&#x4E0D;&#x4E00;&#x6837;&#xFF0C;&#x600E;&#x4E48;&#x81EA;&#x5B9A;&#x4E49;&#x7CFB;&#x7EDF;&#x5B58;&#x50A8;</li>
+</ul>
+<blockquote>
+<p>&#x8BF7;&#x67E5;&#x770B;<a href="sdk-api/device.html">&#x8BBE;&#x5907;&#x7BA1;&#x7406; API</a>&#xFF0C;&#x81EA;&#x5B9A;&#x4E49;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x65B9;&#x6CD5;&#xFF0C;&#x66FF;&#x6362;&#x8BBE;&#x5907;&#x7BA1;&#x7406;&#x670D;&#x52A1;&#xFF08;<a href="sdk-api/#&#x670D;&#x52A1;&#x66FF;&#x6362;">&#x5982;&#x4F55;&#x66FF;&#x6362;&#x670D;&#x52A1;</a>&#xFF09;&#x3002;</p>
+</blockquote>
+<ul>
 <li>&#x8BED;&#x97F3;&#x7684;&#x6570;&#x636E;&#x662F;&#x4EC0;&#x4E48;&#x683C;&#x5F0F;&#x7684;&#xFF0C;&#x9700;&#x8981;&#x600E;&#x4E48;&#x53BB;&#x64AD;&#x653E;</li>
 </ul>
+<blockquote>
+<p>&#x683C;&#x5F0F;&#x4E3A;PCM, &#x4F7F;&#x7528;AudioTrack&#x64AD;&#x653E;&#x3002;</p>
+</blockquote>
 
                                 
                                 </section>
@@ -383,7 +523,7 @@ controllerManager.setQueryCallback(event -&gt; {
 
             
                 
-                <a href="sdk-api.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: SDK API">
+                <a href="sdk-api/other.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 其他API">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
@@ -395,7 +535,7 @@ controllerManager.setQueryCallback(event -&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.6","depth":1,"previous":{"title":"SDK API","level":"1.5","depth":1,"path":"sdk-api.md","ref":"sdk-api.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"faq.md","mtime":"2019-12-11T02:35:29.506Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T02:58:16.961Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.6","depth":1,"previous":{"title":"其他API","level":"1.5.9","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"faq.md","mtime":"2019-12-11T07:28:16.506Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-11T07:29:58.588Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

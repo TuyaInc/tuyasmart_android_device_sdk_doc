@@ -24,7 +24,7 @@ configManager.setInt(Common.ChannelIndex.E_CHANNEL_AUDIO, Common.ParamKey.KEY_AU
 
 - 怎么开启视频流传输
 
-> 请查看SDK初始化文档的“开始推流”
+> 请查看[初始化文档 “开始推流”部分](./sdk-chu-shi-hua.md#开始推流)
 
 - 如何获得语音数据
 
@@ -53,7 +53,7 @@ controllerManager.setQueryCallback(event -> {
 ```
 - 如何知道app是否在看视频  
 
-> 请查看SDK API的"P2P"
+> 通过[P2P API](./sdk-api/stream.md)获取回调
 
 - 心跳时间多长  
 
@@ -65,7 +65,7 @@ controllerManager.setQueryCallback(event -> {
 
 - 我正常的h264格式怎么播放不出来
 
-> 需要使用特定的编码格式，即每一个IDR帧前有SPS和PPS  
+> 需要使用特定的编码格式，即保证每一个IDR帧前有SPS和PPS  
 > 可以参考demo中的类 `H264FileVideoCapture`
 
 - 怎么一直显示正在获取流
@@ -78,10 +78,21 @@ controllerManager.setQueryCallback(event -> {
 
 - 如何发送警报或者移动侦测
 
-> [移动侦测API](./sdk-api.md#移动侦测)
+> [移动侦测API](./sdk-api/motion.md)
 
 - 怎么发起视频通话
+
+> 
+
 - 怎么处理dp点，定义怎么看
+
+> 请查看[DP API](./sdk-api/dp.md)
+
 - 系统存储跟我系统的显示不一样，怎么自定义系统存储
+
+> 请查看[设备管理 API](./sdk-api/device.md)，自定义实现接口方法，替换设备管理服务（[如何替换服务](./sdk-api/README.md#服务替换)）。
+
 - 语音的数据是什么格式的，需要怎么去播放
+
+> 格式为PCM, 使用AudioTrack播放。
 
