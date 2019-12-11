@@ -8,5 +8,5 @@
   * [通过WiFi配网](pei-wang-jie-ru/tong-guo-wifi-pei-wang.md)
 * [升级接口说明](sheng-ji-jie-kou-shuo-ming.md)
 * [SDK API](sdk-api.md)
-* [Q&A](q-and-a.md)
+* [FAQ](faq.md)
 
