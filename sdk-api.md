@@ -4,7 +4,7 @@
 
 > 不需要接入IPC
 
-### **MQTT服务**
+### <div id="mqtt">**MQTT服务**</div>
 
 ```java
 IMqttProcessManager mqttProcessManager = IPCServiceManager.getInstance()
@@ -125,6 +125,11 @@ public interface IControllerManager {
      * @param callback
      */
     void setDPEventCallback(AbstractDPEventCallback callback);
+    
+    /**
+     * 设置DP事件查询回调
+     * */
+    void setQueryCallback(IQueryCallback cb);
 
 }
 
