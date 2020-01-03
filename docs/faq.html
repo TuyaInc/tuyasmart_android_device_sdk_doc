@@ -464,6 +464,12 @@ controllerManager.setQueryCallback(event -&gt; {
 <blockquote>
 <p>&#x683C;&#x5F0F;&#x4E3A;PCM, &#x4F7F;&#x7528;AudioTrack&#x64AD;&#x653E;&#x3002;</p>
 </blockquote>
+<h3 id="&#x626B;&#x7801;&#x914D;&#x7F51;&#x7684;&#x9884;&#x89C8;&#x76F8;&#x673A;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E48;">&#x626B;&#x7801;&#x914D;&#x7F51;&#x7684;&#x9884;&#x89C8;&#x76F8;&#x673A;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x4E48;</h3>
+<pre><code class="lang-java">iNetConfigManager.config(INetConfigManager.QR_PARAMETERS, (INetConfigManager.OnParameterSetting) (parameters, camera) -&gt; {
+              <span class="hljs-comment">//Camera.Parameters p, Camera mCamera</span>
+                camera.setDisplayOrientation(<span class="hljs-number">90</span>);
+        });
+</code></pre>
 <h3 id="api&#x5982;&#x4F55;&#x67E5;&#x8BE2;">API&#x5982;&#x4F55;&#x67E5;&#x8BE2;</h3>
 <blockquote>
 <p>&#x53EF;&#x4EE5;&#x5728;SDK API&#x5206;&#x7EA7;&#x76EE;&#x5F55;&#x91CC;&#x627E;&#x5230;&#x9700;&#x8981;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x627E;&#x4E0D;&#x5230;&#x53EF;&#x4EE5;&#x5C1D;&#x8BD5;&#x6587;&#x6863;&#x641C;&#x7D22;&#x3002;</p>
@@ -507,7 +513,7 @@ controllerManager.setQueryCallback(event -&gt; {
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.6","depth":1,"previous":{"title":"其他API","level":"1.5.9","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"faq.md","mtime":"2019-12-11T07:51:42.569Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-12-18T02:32:15.304Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"FAQ","level":"1.6","depth":1,"previous":{"title":"其他API","level":"1.5.9","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"faq.md","mtime":"2020-01-03T02:36:32.685Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-03T02:36:53.753Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

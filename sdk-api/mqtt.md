@@ -14,6 +14,20 @@ public interface IMqttProcessManager {
      * 当sdk 与云端mqtt 连接状态发生变化时，进行的回调
      * */
     void setMqttStatusChangedCallback(IMqttStatusCallback cb);
+    
+    /**
+     * MQTT状态码：
+     * */
+    public class MqttConnectStatus {
+        /**
+         * 连接到云端，初始化完成，设备上线
+         * */
+        public static final int STATUS_CLOUD_CONN = 7;
+        /**
+         * 与云端断开连接，设备离线
+         * */
+        public static final int STATUS_OFFLINE = 10;
+    }
 
     /**
      * 自己控制发送心跳包

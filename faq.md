@@ -94,6 +94,16 @@ controllerManager.setQueryCallback(event -> {
 
 > 格式为PCM, 使用AudioTrack播放。
 
+###扫码配网的预览相机可以配置么
+
+```java
+iNetConfigManager.config(INetConfigManager.QR_PARAMETERS, (INetConfigManager.OnParameterSetting) (parameters, camera) -> {
+			  //Camera.Parameters p, Camera mCamera
+            	camera.setDisplayOrientation(90);
+        });
+
+```
+
 ###API如何查询
 
 > 可以在SDK API分级目录里找到需要的功能，找不到可以尝试文档搜索。

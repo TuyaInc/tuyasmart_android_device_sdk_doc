@@ -1,5 +1,5 @@
 ---
-description: 通过扫鸦智能APP扫描生成的二维码添加设备。
+description: 通过扫描涂鸦智能APP生成的二维码添加设备。
 ---
 
 # 通过WiFi配网
@@ -9,6 +9,11 @@ description: 通过扫鸦智能APP扫描生成的二维码添加设备。
 ```java
 IPCServiceManager.getInstance()
 .getService(IPCServiceManager.IPCService.NET_CONFIG_SERVICE);
+
+//在界面中提供扫码预览SurfaceView
+SurfaceView surfaceView = findViewById(R.id.surface);
+
+iNetConfigManager.config(INetConfigManager.QR_OUTPUT, surfaceView.getHolder());
 ```
 
 ### **2. 设置配网回调初始化SDK**
