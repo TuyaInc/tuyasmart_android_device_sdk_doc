@@ -45,4 +45,7 @@ iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
             }
         });
 ```
-
+### 3. 如何关闭该配网模式
+```java
+ConfigProvider.enableQR(false);
+```

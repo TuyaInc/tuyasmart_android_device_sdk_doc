@@ -47,3 +47,7 @@ iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
         });
 ```
 
+### 4. 如何关闭该配网模式
+```java
+ConfigProvider.enableBluetooth(false);
+```

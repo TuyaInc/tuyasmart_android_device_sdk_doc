@@ -18,6 +18,7 @@ Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](h
   * 修复夏令时时区错误 **\(2019-11-22\)**
   * 修复dp点重复上报错误 **\(2019-12-17\)**
   * API修改，将[MQTT](./sdk-api.md#mqtt)和[DP控制](./sdk-api.md#dp)相关方法归类 **\(2019-12-18\)**
+  * 修复没有音频数据导致的视频回放跳帧问题 **\(2020-1-10\)**
 
   **IPC\_SDK for v0.1.5 \(2019-10-25\)**
 
