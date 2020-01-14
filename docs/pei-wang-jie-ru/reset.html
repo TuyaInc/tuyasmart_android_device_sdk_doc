@@ -4,9 +4,9 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>通过WiFi配网 · GitBook</title>
+        <title>配网解绑 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="通过扫描涂鸦智能APP生成的二维码添加设备。">
+        <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
         
         
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="reset.html" />
+    <link rel="next" href="../sheng-ji-jie-kou-shuo-ming.html" />
     
     
-    <link rel="prev" href="tong-guo-lan-ya-pei-wang.html" />
+    <link rel="prev" href="tong-guo-wifi-pei-wang.html" />
     
 
     </head>
@@ -155,7 +155,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.3.3" data-path="tong-guo-wifi-pei-wang.html">
+        <li class="chapter " data-level="1.3.3" data-path="tong-guo-wifi-pei-wang.html">
             
                 <a href="tong-guo-wifi-pei-wang.html">
             
@@ -168,7 +168,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.3.4" data-path="reset.html">
+        <li class="chapter active" data-level="1.3.4" data-path="reset.html">
             
                 <a href="reset.html">
             
@@ -378,7 +378,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >通过WiFi配网</a>
+        <a href=".." >配网解绑</a>
     </h1>
 </div>
 
@@ -393,41 +393,17 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x901A;&#x8FC7;wifi&#x914D;&#x7F51;">&#x901A;&#x8FC7;WiFi&#x914D;&#x7F51;</h1>
-<h3 id="1-&#x83B7;&#x53D6;-inetconfigmanager">1<strong>. &#x83B7;&#x53D6; INetConfigManager</strong></h3>
-<pre><code class="lang-java">IPCServiceManager.getInstance()
-.getService(IPCServiceManager.IPCService.NET_CONFIG_SERVICE);
-
-<span class="hljs-comment">//&#x5728;&#x754C;&#x9762;&#x4E2D;&#x63D0;&#x4F9B;&#x626B;&#x7801;&#x9884;&#x89C8;SurfaceView</span>
-SurfaceView surfaceView = findViewById(R.id.surface);
-
-iNetConfigManager.config(INetConfigManager.QR_OUTPUT, surfaceView.getHolder());
-</code></pre>
-<h3 id="2-&#x8BBE;&#x7F6E;&#x914D;&#x7F51;&#x56DE;&#x8C03;&#x521D;&#x59CB;&#x5316;sdk"><strong>2. &#x8BBE;&#x7F6E;&#x914D;&#x7F51;&#x56DE;&#x8C03;&#x521D;&#x59CB;&#x5316;SDK</strong></h3>
-<h4 id="&#x4EC5;&#x914D;&#x7F51;&#x63A5;&#x5165;&#xFF1A;"><strong>&#x4EC5;&#x914D;&#x7F51;&#x63A5;&#x5165;&#xFF1A;</strong></h4>
-<pre><code class="lang-java">iNetConfigManager.configNetInfo(<span class="hljs-keyword">new</span> INetConfigManager.NetConfigCallback() {
-            <span class="hljs-meta">@Override</span>
-            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configOver</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> first, String token)</span> </span>{
-            IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
-
-            transManager.initIoTSDK(token, productId, uuid, authorKey);
-
+                                <h1 id="&#x914D;&#x7F51;&#x89E3;&#x7ED1;">&#x914D;&#x7F51;&#x89E3;&#x7ED1;</h1>
+<h3 id="&#x4ECE;app&#x89E3;&#x7ED1;">&#x4ECE;APP&#x89E3;&#x7ED1;</h3>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x89E3;&#x7ED1;&#x6210;&#x529F;&#x540E;&#x8FDB;&#x5165;&#x89E3;&#x7ED1;&#x56DE;&#x8C03;</span>
+IPCServiceManager.getInstance().setResetHandler(isHardward -&gt; {
+            <span class="hljs-comment">//&#x5904;&#x7406;&#x89E3;&#x7ED1; isHardward&#x53C2;&#x6570;&#x4EE3;&#x8868;&#x662F;&#x5426;&#x4E3A;&#x786C;&#x91CD;&#x7F6E; &#x9ED8;&#x8BA4;&#x4E3A;false</span>
             }
         });
 </code></pre>
-<p><strong>&#x63A5;&#x5165;IPC:</strong></p>
-<pre><code class="lang-java">iNetConfigManager.configNetInfo(<span class="hljs-keyword">new</span> INetConfigManager.NetConfigCallback() {
-            <span class="hljs-meta">@Override</span>
-            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configOver</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> first, String token)</span> </span>{
-            IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
-
-            transManager.initTransSDK(token, <span class="hljs-string">&quot;/sdcard/&quot;</span>, <span class="hljs-string">&quot;/sdcard/&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
-
-            }
-        });
-</code></pre>
-<h3 id="3-&#x5982;&#x4F55;&#x5173;&#x95ED;&#x8BE5;&#x914D;&#x7F51;&#x6A21;&#x5F0F;">3. &#x5982;&#x4F55;&#x5173;&#x95ED;&#x8BE5;&#x914D;&#x7F51;&#x6A21;&#x5F0F;</h3>
-<pre><code class="lang-java">ConfigProvider.enableQR(<span class="hljs-keyword">false</span>);
+<h3 id="&#x4ECE;&#x8BBE;&#x5907;&#x7AEF;&#x89E3;&#x7ED1;">&#x4ECE;&#x8BBE;&#x5907;&#x7AEF;&#x89E3;&#x7ED1;</h3>
+<pre><code class="lang-java"><span class="hljs-comment">//&#x4E3B;&#x52A8;&#x89E6;&#x53D1;&#x91CD;&#x7F6E;&#xFF0C;&#x4E5F;&#x4F1A;&#x8FDB;&#x5165;&#x4E0A;&#x9762;&#x7684;&#x56DE;&#x8C03;</span>
+IPCServiceManager.getInstance().reset();
 </code></pre>
 
                                 
@@ -456,12 +432,12 @@ iNetConfigManager.config(INetConfigManager.QR_OUTPUT, surfaceView.getHolder());
 
             
                 
-                <a href="tong-guo-lan-ya-pei-wang.html" class="navigation navigation-prev " aria-label="Previous page: 通过蓝牙配网">
+                <a href="tong-guo-wifi-pei-wang.html" class="navigation navigation-prev " aria-label="Previous page: 通过WiFi配网">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="reset.html" class="navigation navigation-next " aria-label="Next page: 配网解绑">
+                <a href="../sheng-ji-jie-kou-shuo-ming.html" class="navigation navigation-next " aria-label="Next page: 升级接口说明">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -472,7 +448,7 @@ iNetConfigManager.config(INetConfigManager.QR_OUTPUT, surfaceView.getHolder());
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"通过扫描涂鸦智能APP生成的二维码添加设备。","title":"通过WiFi配网","level":"1.3.3","depth":2,"next":{"title":"配网解绑","level":"1.3.4","depth":2,"path":"pei-wang-jie-ru/reset.md","ref":"pei-wang-jie-ru/reset.md","articles":[]},"previous":{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","mtime":"2020-01-10T07:59:22.672Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T07:00:43.879Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"配网解绑","level":"1.3.4","depth":2,"next":{"title":"升级接口说明","level":"1.4","depth":1,"path":"sheng-ji-jie-kou-shuo-ming.md","ref":"sheng-ji-jie-kou-shuo-ming.md","articles":[]},"previous":{"title":"通过WiFi配网","level":"1.3.3","depth":2,"path":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pei-wang-jie-ru/reset.md","mtime":"2020-01-14T07:00:31.118Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-01-14T07:00:43.879Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

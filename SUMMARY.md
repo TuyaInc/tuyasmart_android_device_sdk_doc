@@ -6,6 +6,7 @@
   * [通过MQTT消息配网](pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md)
   * [通过蓝牙配网](pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md)
   * [通过WiFi配网](pei-wang-jie-ru/tong-guo-wifi-pei-wang.md)
+  * [配网解绑](pei-wang-jie-ru/reset.md)
 * [升级接口说明](sheng-ji-jie-kou-shuo-ming.md)
 * [SDK API](sdk-api/README.md)
 	* [MQTT服务](sdk-api/mqtt.md) 	
