@@ -1,6 +1,6 @@
 # Table of contents
 
-* [涂鸦智能 IPC SDK 文档](README.md)
+* [涂鸦智能 Android IPC SDK 文档](README.md)
 * [SDK初始化](sdk-chu-shi-hua.md)
 * [配网接入](pei-wang-jie-ru/README.md)
   * [通过MQTT消息配网](pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md)

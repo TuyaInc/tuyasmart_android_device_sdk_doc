@@ -2,7 +2,7 @@
 description: Android物联网应用接入涂鸦平台所使用的SDK
 ---
 
-# 涂鸦智能 IPC SDK 文档
+# 涂鸦智能 Android IPC SDK 文档
 
 SDK下载 [ipc-sdk-0.1.6](assets/ipc-sdk-0.1.6.aar.zip)
 
