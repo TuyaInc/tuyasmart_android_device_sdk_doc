@@ -108,3 +108,7 @@ iNetConfigManager.config(INetConfigManager.QR_PARAMETERS, (INetConfigManager.OnP
 
 > 可以在SDK API分级目录里找到需要的功能，找不到可以尝试文档搜索。
 
+###MQTT配网报错：错误的用户名或密码
+
+> uuid和pid未完成录入，请联系对接人。
+

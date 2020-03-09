@@ -6,8 +6,11 @@ description: 通过服务端下发的MQTT消息添加设备。
 > **使用说明**  
 > 接入SDK到设备端并运行，使用*涂鸦智能APP*扫二维码完成配网
 > > 二维码生成规则：  
-> > https://smartapp.tuya.com/s/p?p=&uuid=&v=2.0
+> > https://smartapp.tuya.com/s/p?p=[你的pid]&uuid=[你的uuid]&v=2.0
 > > 将上面链接中的参数替换（p对应pid、uuid对应uuid），将链接生成一个二维码
+> > 
+> > 权限要求：
+> > 配网使用的uuid、pid 需要先进行平台录入方可使用，请联系相关对接人（详细录入方式@沫候）
 
 ### **1. 配置依赖**
 
