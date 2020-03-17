@@ -428,6 +428,14 @@ INetConfigManager.setUserId(String userId);
             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configOver</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> first, String token)</span> </span>{
             IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
 
+
+                <span class="hljs-comment">/**
+                 * &#x521D;&#x59CB;&#x5316;&#x6D41;&#x4F20;&#x8F93;SDK, &#x5173;&#x95ED;&#x4E86;p2p&#x9A8C;&#x8BC1;
+                 * <span class="hljs-doctag">@param</span> token &#x914D;&#x7F51;&#x83B7;&#x5F97;&#x7684;token
+                 * <span class="hljs-doctag">@param</span> productId &#x4EA7;&#x54C1;Id
+                 * <span class="hljs-doctag">@param</span> uuid  &#x6BCF;&#x4E2A;&#x8BBE;&#x5907;&#x7684;SN
+                 * <span class="hljs-doctag">@param</span> authorKey &#x6388;&#x6743;&#x7684;&#x7801;
+                 */</span>
             transManager.initIoTSDK(token, productId, uuid, authorKey);
 
             }
@@ -439,7 +447,17 @@ INetConfigManager.setUserId(String userId);
             <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">configOver</span><span class="hljs-params">(<span class="hljs-keyword">boolean</span> first, String token)</span> </span>{
             IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
 
-            transManager.initTransSDK(token, <span class="hljs-string">&quot;/sdcard/&quot;</span>, <span class="hljs-string">&quot;/sdcard/&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>);
+               <span class="hljs-comment">/**                
+            * &#x521D;&#x59CB;&#x5316;&#x6D41;&#x4F20;&#x8F93;SDK
+            * <span class="hljs-doctag">@param</span> token &#x914D;&#x7F51;&#x83B7;&#x5F97;&#x7684;token
+             * <span class="hljs-doctag">@param</span> basePath &#x53EF;&#x5199;&#x7684;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;SDK&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;
+             * <span class="hljs-doctag">@param</span> recordPath &#x53EF;&#x5199;&#x7684;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5F55;&#x50CF;
+             * <span class="hljs-doctag">@param</span> productId &#x4EA7;&#x54C1;Id
+             * <span class="hljs-doctag">@param</span> uuid  &#x6BCF;&#x4E2A;&#x8BBE;&#x5907;&#x7684;SN
+             * <span class="hljs-doctag">@param</span> authorKey &#x6388;&#x6743;&#x7684;&#x7801;
+             */</span>
+
+            transManager.initTransSDK(token, basePath, recordPath, productId, uuid, authorKey);
 
             }
         });
@@ -490,7 +508,7 @@ INetConfigManager.setUserId(String userId);
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"description":"通过服务端下发的MQTT消息添加设备。","title":"通过MQTT消息配网","level":"1.3.1","depth":2,"next":{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},"previous":{"title":"配网接入","level":"1.3","depth":1,"path":"pei-wang-jie-ru/README.md","ref":"pei-wang-jie-ru/README.md","articles":[{"title":"通过MQTT消息配网","level":"1.3.1","depth":2,"path":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","articles":[]},{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},{"title":"通过WiFi配网","level":"1.3.3","depth":2,"path":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","articles":[]},{"title":"配网解绑","level":"1.3.4","depth":2,"path":"pei-wang-jie-ru/reset.md","ref":"pei-wang-jie-ru/reset.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","mtime":"2020-03-09T10:06:35.158Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-10T10:42:20.980Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"description":"通过服务端下发的MQTT消息添加设备。","title":"通过MQTT消息配网","level":"1.3.1","depth":2,"next":{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},"previous":{"title":"配网接入","level":"1.3","depth":1,"path":"pei-wang-jie-ru/README.md","ref":"pei-wang-jie-ru/README.md","articles":[{"title":"通过MQTT消息配网","level":"1.3.1","depth":2,"path":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","articles":[]},{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},{"title":"通过WiFi配网","level":"1.3.3","depth":2,"path":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","articles":[]},{"title":"配网解绑","level":"1.3.4","depth":2,"path":"pei-wang-jie-ru/reset.md","ref":"pei-wang-jie-ru/reset.md","articles":[]}]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","mtime":"2020-03-17T07:37:05.872Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-17T07:38:53.953Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

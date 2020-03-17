@@ -14,6 +14,11 @@ com.google.zxing:core:3.3.0
 packagingOptions {
     pickFirst 'lib/armeabi-v7a/libc++_shared.so'
 }
+
+compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 ```
 
 ## 权限配置
@@ -189,8 +194,8 @@ iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
 ```java
 //获取服务
 IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
-//将对应的参数设置进去，第一个参数为配网所获取的token，第二个为存储配置信息的路径，其余几个先用demo的值进行测试
-transManager.initTransSDK(token, "/sdcard/",
+
+transManager.initTransSDK(token, "/sdcard/", "/sdcard/record/",
                         "TQNRbAHdrGmqk5bs", "tuyaa10e7bea6ac9ad5d", "eANvTmHNARMYlUBoGMBb1LMc1oNDA8TF");
 
 //                Log.d(TAG, "dpReport1: " + TranJNIApi.dpReport(TUYA_DP_SD_STATUS_ONLY_GET, DPConst.Type.PROP_VALUE, 1, 1));
