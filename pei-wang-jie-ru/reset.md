@@ -4,6 +4,7 @@
 //解绑成功后进入解绑回调
 IPCServiceManager.getInstance().setResetHandler(isHardward -> {
             //处理解绑 isHardward参数代表是否为硬重置 默认为false
+            // 务必重启或杀掉当前APP进程，避免二次配网失败
             }
         });
 ```
