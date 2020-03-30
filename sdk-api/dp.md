@@ -10,7 +10,11 @@ public interface IControllerManager {
      * dp上报接口，在处理完dp点之后回复客户端
      * @param dpID dp标示
      * @param type 类型
-     * @param pVal 值
+     * Boolean DPConst.Type.PROP_BOOL
+     * Integer DPConst.Type.PROP_VALUE
+     * String DPConst.Type.PROP_STR
+     * Enum DPConst.Type.PROP_ENUM
+     * @param pVal 值 
      * @return
      */
     int dpReport(int dpID, int type, Object pVal);
