@@ -1,5 +1,7 @@
 # SDK初始化
 
+> 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
+
 ## 依赖配置
 
 ```groovy
@@ -195,42 +197,45 @@ iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
 //获取服务
 IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
 
-transManager.initTransSDK(token, "/sdcard/", "/sdcard/record/",
-                        "TQNRbAHdrGmqk5bs", "tuyaa10e7bea6ac9ad5d", "eANvTmHNARMYlUBoGMBb1LMc1oNDA8TF");
+/**
+ * 初始化流传输SDK
+ * @param token 配网获得的token
+ * @param basePath 可写的一个路径，用于存储SDK相关的配置
+ * @param recordPath 可写的一个路径，用于存储录像
+ * @param productId 产品Id
+ * @param uuid  每个设备的SN
+ * @param authorKey 授权的码
+ * @return
+ */
+transManager.initTransSDK(token, basePath, recordPath,
+                        productId, uuid, authorKey);
 
-//                Log.d(TAG, "dpReport1: " + TranJNIApi.dpReport(TUYA_DP_SD_STATUS_ONLY_GET, DPConst.Type.PROP_VALUE, 1, 1));
-//                Log.d(TAG, "dpReport2: " + TranJNIApi.dpReport(TUYA_DP_PTZ_CONTROL, DPConst.Type.PROP_ENUM, 0, 1));
-//                Log.d(TAG, "dpReport3: " + TranJNIApi.dpReport(TUYA_DP_SD_STORAGE_ONLY_GET, DPConst.Type.PROP_STR, "100|3|97", 1));
-//                Log.d(TAG, "dpReport4: " + TranJNIApi.dpReport(TUYA_DP_SD_UMOUNT, DPConst.Type.PROP_BOOL, true, 1));
-                //开启传输
-                transManager.startMultiMediaTrans();
-                //增加音频回调接口
-                transManager.addAudioTalkCallback(new AudioTalkCallback() {
-                    @Override
-                    public void onAudioTalkData(byte[] data) {
-                    }
-                });
+//开启传输
+transManager.startMultiMediaTrans();
 
-                PermissionUtil.check(MainActivity.this, new String[]{
-                        Manifest.permission.RECORD_AUDIO,
-                }, () -> {
-                    videoCapture = new VideoCapture();
-                    audioCapture = new AudioCapture();
-                    //推流
-                    /**
-                    * push 视频流到SDK中
-                     * */
-                    transManager.pushMediaStream(Common.ChannelIndex.E_CHANNEL_VIDEO_MAIN, type, bytes, 0);
-                    videoCapture.startVideoCapture();
-                    audioCapture.startCapture();
-                });
+//设置音频回调接口，接收云端下发的语音数据
+transManager.addAudioTalkCallback(new AudioTalkCallback() {
+	@Override
+	public void onAudioTalkData(byte[] data) {}
+});
+
+PermissionUtil.check(MainActivity.this, new String[]{Manifest.permission.RECORD_AUDIO,}, () -> {
+			//推送视频流和音频流（下面为演示代码，内部通过pushMediaStream函数将数据推送，可以在demo中找到类作参考）
+			videoCapture = new VideoCapture();
+			audioCapture = new AudioCapture();
+			
+			videoCapture.startVideoCapture();
+			audioCapture.startCapture();
+});
 ```
+开启传输后就可以向云端推流，视频和音频数据都使用`pushMediaStream`方法
 
 ```java
 /**
      * push 一帧多媒体流到SDK
      * @param streamType 媒体数据类型 {@link Common.ChannelIndex}
-     * @param nalType 是视频流时，为H264码流的nal类型. 是音频流时，此参数无效，默认为0
+     * @param nalType 是视频流时，为H264码流的NAL类型（Common.NAL_TYPE.NAL_TYPE_IDR 或 Common.NAL_TYPE.NAL_TYPE_PB） 
+     * 是音频流时，此参数无效，传0即可
      * @param streamData 码流数据
      * @param timeStamp 每一帧数据产生的时间戳
      * */

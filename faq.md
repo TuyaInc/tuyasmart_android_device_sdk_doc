@@ -112,3 +112,8 @@ iNetConfigManager.config(INetConfigManager.QR_PARAMETERS, (INetConfigManager.OnP
 
 > uuid和pid未完成录入，请联系对接人。
 
+###设备进入休眠状态后离线了
+
+> 原因：设备休眠后会导致MQTT心跳停止，和云端服务断开。  
+> 解决方式：在设备休眠时，开启定时服务（建议使用AlarmManager
+> ）调用主动心跳函数`IMqttProcessManager.sendHeartbeat()`，时间间隔不超过120s。

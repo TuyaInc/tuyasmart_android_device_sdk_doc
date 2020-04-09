@@ -394,6 +394,9 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="sdk&#x521D;&#x59CB;&#x5316;">SDK&#x521D;&#x59CB;&#x5316;</h1>
+<blockquote>
+<p>&#x63D0;&#x793A;&#xFF1A;&#x63A5;&#x5165;&#x548C;&#x4F7F;&#x7528;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x7684;&#x4E00;&#x4E9B;&#x5E38;&#x89C1;&#x95EE;&#x9898;&#xFF0C;&#x5728;<a href="faq.html">FAQ</a>&#x90FD;&#x6709;&#x8BB0;&#x5F55;&#xFF0C;&#x9047;&#x5230;&#x56F0;&#x96BE;&#x53EF;&#x4EE5;&#x5148;&#x67E5;&#x770B;&#x4E00;&#x4E0B;&#xFF1A;&#xFF09;</p>
+</blockquote>
 <h2 id="&#x4F9D;&#x8D56;&#x914D;&#x7F6E;">&#x4F9D;&#x8D56;&#x914D;&#x7F6E;</h2>
 <pre><code class="lang-groovy">com.android.<span class="hljs-string">support:</span>appcompat-<span class="hljs-string">v7:</span><span class="hljs-number">28.0</span><span class="hljs-number">.0</span>
 com.<span class="hljs-string">tencent:</span><span class="hljs-string">mmkv:</span><span class="hljs-number">1.0</span><span class="hljs-number">.18</span>
@@ -564,40 +567,43 @@ iNetConfigManager.configNetInfo(<span class="hljs-keyword">new</span> INetConfig
 <pre><code class="lang-java"><span class="hljs-comment">//&#x83B7;&#x53D6;&#x670D;&#x52A1;</span>
 IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
 
-transManager.initTransSDK(token, <span class="hljs-string">&quot;/sdcard/&quot;</span>, <span class="hljs-string">&quot;/sdcard/record/&quot;</span>,
-                        <span class="hljs-string">&quot;TQNRbAHdrGmqk5bs&quot;</span>, <span class="hljs-string">&quot;tuyaa10e7bea6ac9ad5d&quot;</span>, <span class="hljs-string">&quot;eANvTmHNARMYlUBoGMBb1LMc1oNDA8TF&quot;</span>);
+<span class="hljs-comment">/**
+ * &#x521D;&#x59CB;&#x5316;&#x6D41;&#x4F20;&#x8F93;SDK
+ * <span class="hljs-doctag">@param</span> token &#x914D;&#x7F51;&#x83B7;&#x5F97;&#x7684;token
+ * <span class="hljs-doctag">@param</span> basePath &#x53EF;&#x5199;&#x7684;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;SDK&#x76F8;&#x5173;&#x7684;&#x914D;&#x7F6E;
+ * <span class="hljs-doctag">@param</span> recordPath &#x53EF;&#x5199;&#x7684;&#x4E00;&#x4E2A;&#x8DEF;&#x5F84;&#xFF0C;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5F55;&#x50CF;
+ * <span class="hljs-doctag">@param</span> productId &#x4EA7;&#x54C1;Id
+ * <span class="hljs-doctag">@param</span> uuid  &#x6BCF;&#x4E2A;&#x8BBE;&#x5907;&#x7684;SN
+ * <span class="hljs-doctag">@param</span> authorKey &#x6388;&#x6743;&#x7684;&#x7801;
+ * <span class="hljs-doctag">@return</span>
+ */</span>
+transManager.initTransSDK(token, basePath, recordPath,
+                        productId, uuid, authorKey);
 
-<span class="hljs-comment">//                Log.d(TAG, &quot;dpReport1: &quot; + TranJNIApi.dpReport(TUYA_DP_SD_STATUS_ONLY_GET, DPConst.Type.PROP_VALUE, 1, 1));</span>
-<span class="hljs-comment">//                Log.d(TAG, &quot;dpReport2: &quot; + TranJNIApi.dpReport(TUYA_DP_PTZ_CONTROL, DPConst.Type.PROP_ENUM, 0, 1));</span>
-<span class="hljs-comment">//                Log.d(TAG, &quot;dpReport3: &quot; + TranJNIApi.dpReport(TUYA_DP_SD_STORAGE_ONLY_GET, DPConst.Type.PROP_STR, &quot;100|3|97&quot;, 1));</span>
-<span class="hljs-comment">//                Log.d(TAG, &quot;dpReport4: &quot; + TranJNIApi.dpReport(TUYA_DP_SD_UMOUNT, DPConst.Type.PROP_BOOL, true, 1));</span>
-                <span class="hljs-comment">//&#x5F00;&#x542F;&#x4F20;&#x8F93;</span>
-                transManager.startMultiMediaTrans();
-                <span class="hljs-comment">//&#x589E;&#x52A0;&#x97F3;&#x9891;&#x56DE;&#x8C03;&#x63A5;&#x53E3;</span>
-                transManager.addAudioTalkCallback(<span class="hljs-keyword">new</span> AudioTalkCallback() {
-                    <span class="hljs-meta">@Override</span>
-                    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAudioTalkData</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] data)</span> </span>{
-                    }
-                });
+<span class="hljs-comment">//&#x5F00;&#x542F;&#x4F20;&#x8F93;</span>
+transManager.startMultiMediaTrans();
 
-                PermissionUtil.check(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> String[]{
-                        Manifest.permission.RECORD_AUDIO,
-                }, () -&gt; {
-                    videoCapture = <span class="hljs-keyword">new</span> VideoCapture();
-                    audioCapture = <span class="hljs-keyword">new</span> AudioCapture();
-                    <span class="hljs-comment">//&#x63A8;&#x6D41;</span>
-                    <span class="hljs-comment">/**
-                    * push &#x89C6;&#x9891;&#x6D41;&#x5230;SDK&#x4E2D;
-                     * */</span>
-                    transManager.pushMediaStream(Common.ChannelIndex.E_CHANNEL_VIDEO_MAIN, type, bytes, <span class="hljs-number">0</span>);
-                    videoCapture.startVideoCapture();
-                    audioCapture.startCapture();
-                });
+<span class="hljs-comment">//&#x8BBE;&#x7F6E;&#x97F3;&#x9891;&#x56DE;&#x8C03;&#x63A5;&#x53E3;&#xFF0C;&#x63A5;&#x6536;&#x4E91;&#x7AEF;&#x4E0B;&#x53D1;&#x7684;&#x8BED;&#x97F3;&#x6570;&#x636E;</span>
+transManager.addAudioTalkCallback(<span class="hljs-keyword">new</span> AudioTalkCallback() {
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">onAudioTalkData</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] data)</span> </span>{}
+});
+
+PermissionUtil.check(MainActivity.<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> String[]{Manifest.permission.RECORD_AUDIO,}, () -&gt; {
+            <span class="hljs-comment">//&#x63A8;&#x9001;&#x89C6;&#x9891;&#x6D41;&#x548C;&#x97F3;&#x9891;&#x6D41;&#xFF08;&#x4E0B;&#x9762;&#x4E3A;&#x6F14;&#x793A;&#x4EE3;&#x7801;&#xFF0C;&#x5185;&#x90E8;&#x901A;&#x8FC7;pushMediaStream&#x51FD;&#x6570;&#x5C06;&#x6570;&#x636E;&#x63A8;&#x9001;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;demo&#x4E2D;&#x627E;&#x5230;&#x7C7B;&#x4F5C;&#x53C2;&#x8003;&#xFF09;</span>
+            videoCapture = <span class="hljs-keyword">new</span> VideoCapture();
+            audioCapture = <span class="hljs-keyword">new</span> AudioCapture();
+
+            videoCapture.startVideoCapture();
+            audioCapture.startCapture();
+});
 </code></pre>
+<p>&#x5F00;&#x542F;&#x4F20;&#x8F93;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x5411;&#x4E91;&#x7AEF;&#x63A8;&#x6D41;&#xFF0C;&#x89C6;&#x9891;&#x548C;&#x97F3;&#x9891;&#x6570;&#x636E;&#x90FD;&#x4F7F;&#x7528;<code>pushMediaStream</code>&#x65B9;&#x6CD5;</p>
 <pre><code class="lang-java"><span class="hljs-comment">/**
      * push &#x4E00;&#x5E27;&#x591A;&#x5A92;&#x4F53;&#x6D41;&#x5230;SDK
      * <span class="hljs-doctag">@param</span> streamType &#x5A92;&#x4F53;&#x6570;&#x636E;&#x7C7B;&#x578B; {<span class="hljs-doctag">@link</span> Common.ChannelIndex}
-     * <span class="hljs-doctag">@param</span> nalType &#x662F;&#x89C6;&#x9891;&#x6D41;&#x65F6;&#xFF0C;&#x4E3A;H264&#x7801;&#x6D41;&#x7684;nal&#x7C7B;&#x578B;. &#x662F;&#x97F3;&#x9891;&#x6D41;&#x65F6;&#xFF0C;&#x6B64;&#x53C2;&#x6570;&#x65E0;&#x6548;&#xFF0C;&#x9ED8;&#x8BA4;&#x4E3A;0
+     * <span class="hljs-doctag">@param</span> nalType &#x662F;&#x89C6;&#x9891;&#x6D41;&#x65F6;&#xFF0C;&#x4E3A;H264&#x7801;&#x6D41;&#x7684;NAL&#x7C7B;&#x578B;&#xFF08;Common.NAL_TYPE.NAL_TYPE_IDR &#x6216; Common.NAL_TYPE.NAL_TYPE_PB&#xFF09; 
+     * &#x662F;&#x97F3;&#x9891;&#x6D41;&#x65F6;&#xFF0C;&#x6B64;&#x53C2;&#x6570;&#x65E0;&#x6548;&#xFF0C;&#x4F20;0&#x5373;&#x53EF;
      * <span class="hljs-doctag">@param</span> streamData &#x7801;&#x6D41;&#x6570;&#x636E;
      * <span class="hljs-doctag">@param</span> timeStamp &#x6BCF;&#x4E00;&#x5E27;&#x6570;&#x636E;&#x4EA7;&#x751F;&#x7684;&#x65F6;&#x95F4;&#x6233;
      * */</span>
@@ -681,7 +687,7 @@ transManager.initTransSDK(token, <span class="hljs-string">&quot;/sdcard/&quot;<
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"SDK初始化","level":"1.2","depth":1,"next":{"title":"配网接入","level":"1.3","depth":1,"path":"pei-wang-jie-ru/README.md","ref":"pei-wang-jie-ru/README.md","articles":[{"title":"通过MQTT消息配网","level":"1.3.1","depth":2,"path":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","articles":[]},{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},{"title":"通过WiFi配网","level":"1.3.3","depth":2,"path":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","articles":[]},{"title":"配网解绑","level":"1.3.4","depth":2,"path":"pei-wang-jie-ru/reset.md","ref":"pei-wang-jie-ru/reset.md","articles":[]}]},"previous":{"title":"涂鸦智能 Android IPC SDK 文档","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-chu-shi-hua.md","mtime":"2020-03-17T07:34:00.515Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-03-30T11:37:12.793Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"SDK初始化","level":"1.2","depth":1,"next":{"title":"配网接入","level":"1.3","depth":1,"path":"pei-wang-jie-ru/README.md","ref":"pei-wang-jie-ru/README.md","articles":[{"title":"通过MQTT消息配网","level":"1.3.1","depth":2,"path":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.md","articles":[]},{"title":"通过蓝牙配网","level":"1.3.2","depth":2,"path":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.md","articles":[]},{"title":"通过WiFi配网","level":"1.3.3","depth":2,"path":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","ref":"pei-wang-jie-ru/tong-guo-wifi-pei-wang.md","articles":[]},{"title":"配网解绑","level":"1.3.4","depth":2,"path":"pei-wang-jie-ru/reset.md","ref":"pei-wang-jie-ru/reset.md","articles":[]}]},"previous":{"title":"涂鸦智能 Android IPC SDK 文档","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-chu-shi-hua.md","mtime":"2020-04-09T07:41:40.121Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-04-09T07:51:01.165Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

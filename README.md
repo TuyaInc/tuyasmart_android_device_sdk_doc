@@ -11,6 +11,8 @@ SDK下载：
 
 Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](https://github.com/TuyaInc/tuyasmart_android_device_sdk_demo)
 
+> 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
+
 
 * **IPC\_SDK for v0.1.6 \(2019-11-08\)**
 
