@@ -7,11 +7,11 @@
 ```groovy
 implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.0'
 
-implementation com.android.support:appcompat-v7:28.0.0
-implementation com.tencent:mmkv:1.0.18
-implementation com.google.code.gson:gson:2.8.5
-implementation com.alibaba:fastjson:1.1.67.android
-implementation com.google.zxing:core:3.3.0
+implementation 'com.android.support:appcompat-v7:28.0.0'
+implementation 'com.tencent:mmkv:1.0.18'
+implementation 'com.google.code.gson:gson:2.8.5'
+implementation 'com.alibaba:fastjson:1.1.67.android'
+implementation 'com.google.zxing:core:3.3.0'
 ```
 
 ```groovy
