@@ -4,10 +4,10 @@ description: Android物联网应用接入涂鸦平台所使用的SDK
 
 # 涂鸦智能 Android IPC SDK 文档
 
-SDK下载：  
+<!---SDK下载;--->
 
-* [minSdkVersion >= Anroid N](assets/24/ipc-sdk.zip)
-* [minSdkVersion >= 22](assets/22/ipc-sdk.zip)
+<!---* [minSdkVersion >= Anroid N](assets/24/ipc-sdk.zip)--->
+<!---* [minSdkVersion >= 22](assets/22/ipc-sdk.zip)--->
 
 Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](https://github.com/TuyaInc/tuyasmart_android_device_sdk_demo)
 

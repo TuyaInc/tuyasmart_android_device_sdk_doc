@@ -21,6 +21,8 @@ public interface INetConfigManager {
      * void configOver(String token); 配网结束回调
      * void startConfig(); 开始配网回调
      * void recConfigInfo(); 设备收到配网信息回调
+     * void onNetConnectFailed(int type, String msg); 配网失败，建议提示用户重新操作
+     * void onNetPrepareFailed(int type, String msg); 配网准备阶段失败，建议重试
      */
     void configNetInfo(NetConfigCallback callback);
 
@@ -35,6 +37,12 @@ public interface INetConfigManager {
      * 停止配网
      */
     void stop(Context ctx);
+    
+    /**
+     * 配网准备阶段重试
+     * @param ConfigProvider.TYPE_XX 配网类型
+     */
+    void retry(int type);
 
 }
 ```

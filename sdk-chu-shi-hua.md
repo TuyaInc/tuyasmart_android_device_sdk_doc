@@ -5,11 +5,13 @@
 ## 依赖配置
 
 ```groovy
-com.android.support:appcompat-v7:28.0.0
-com.tencent:mmkv:1.0.18
-com.google.code.gson:gson:2.8.5
-com.alibaba:fastjson:1.1.67.android
-com.google.zxing:core:3.3.0
+implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.0'
+
+implementation com.android.support:appcompat-v7:28.0.0
+implementation com.tencent:mmkv:1.0.18
+implementation com.google.code.gson:gson:2.8.5
+implementation com.alibaba:fastjson:1.1.67.android
+implementation com.google.zxing:core:3.3.0
 ```
 
 ```groovy
@@ -187,18 +189,39 @@ iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
             public void recConfigInfo() {//收到配网信息了
                 android.util.Log.d(TAG, "recConfigInfo: ");
             }
+            
+            /**
+             * 配网失败，建议提示用户重新操作，不能重试
+             * @param type 配网类型 ConfigProvider.TYPE_XX
+             * @param msg 错误信息
+             */
+            @Override
+            public void onNetConnectFailed(int type, String msg) {
+                Log.w(TAG, "onNetConnectFailed: " + type + " / " + msg);
+            }
+
+            /**
+             * 配网准备阶段失败，建议重试
+             * @param type 配网类型 ConfigProvider.TYPE_XX
+             * @param msg 错误信息
+             */
+            @Override
+            public void onNetPrepareFailed(int type, String msg) {
+                Log.w(TAG, "onNetPrepareFailed: " + type + " / " + msg);
+                iNetConfigManager.retry(type);
+            }
+            
         });
     }
 ```
 
-### <div id="开始推流">**4.开始推流**</div>
-
+### **4.激活设备**
 ```java
 //获取服务
 IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
 
 /**
- * 初始化流传输SDK
+ * 激活SDK
  * @param token 配网获得的token
  * @param basePath 可写的一个路径，用于存储SDK相关的配置
  * @param recordPath 可写的一个路径，用于存储录像
@@ -210,23 +233,25 @@ IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPC
 transManager.initTransSDK(token, basePath, recordPath,
                         productId, uuid, authorKey);
 
-//开启传输
-transManager.startMultiMediaTrans();
+```
 
-//设置音频回调接口，接收云端下发的语音数据
-transManager.addAudioTalkCallback(new AudioTalkCallback() {
-	@Override
-	public void onAudioTalkData(byte[] data) {}
-});
+### <div id="开始推流"> **4.开始推流** </div>
 
-PermissionUtil.check(MainActivity.this, new String[]{Manifest.permission.RECORD_AUDIO,}, () -> {
-			//推送视频流和音频流（下面为演示代码，内部通过pushMediaStream函数将数据推送，可以在demo中找到类作参考）
-			videoCapture = new VideoCapture();
-			audioCapture = new AudioCapture();
-			
-			videoCapture.startVideoCapture();
-			audioCapture.startCapture();
-});
+推流需要在设备激活成功后发起，即MQTT上线时
+
+```java
+
+IMqttProcessManager mqttProcessManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MQTT_SERVICE);
+
+mqttProcessManager.setMqttStatusChangedCallback(status -> {
+                    Log.w("onMqttStatus", status + "");
+
+                    if (status == Common.MqttConnectStatus.STATUS_CLOUD_CONN) {
+                    //开启传输
+						transManager.startMultiMediaTrans();
+						
+						}
+					}
 ```
 开启传输后就可以向云端推流，视频和音频数据都使用`pushMediaStream`方法
 
