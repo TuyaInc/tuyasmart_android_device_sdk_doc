@@ -3,6 +3,10 @@
 > 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
 
 ## 依赖配置
+```groovy
+maven { url 'https://maven-other.tuya.com/repository/maven-releases/'}
+maven { url 'https://maven-other.tuya.com/repository/maven-snapshots/'}
+```
 
 ```groovy
 implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.0'
