@@ -27,6 +27,10 @@ public interface IMqttProcessManager {
          * 与云端断开连接，设备离线
          * */
         public static final int STATUS_OFFLINE = 10;
+        /**
+         * 设备已经绑定
+         * */
+        public static final int STATUS_ALREADY_BIND = 9;
     }
 
     /**

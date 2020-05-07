@@ -15,6 +15,7 @@ public interface IMediaTransManager {
     /**
      * 关闭多媒体传输通道.
      * 该方法调用之后，所有的传输通道都被关闭，多媒体流无法push到client端，也无法接受Mqtt消息
+     * @return success: 0 fase: !0
      * */
     int stopMultiMediaTrans();
 
@@ -22,6 +23,7 @@ public interface IMediaTransManager {
      * 关闭多媒体传输通道.
      * 设备端通过该方法可以主动发起呼叫挂断，然后重新开启p2p 通道.
      * 因为关闭通道之后，多媒体流无法push到client端，也无法接受Mqtt消息. 所以，发起主动挂断呼叫之后，需要重新开启此通道.
+     * @return success: 0 fase: !0
      * */
     int stopAndRestartMultiMediaTrans();
 
@@ -29,7 +31,7 @@ public interface IMediaTransManager {
      * 启动EchoShow和Chromecast
      * @param videoType 传输的视频流类型 {@link Common.ChannelIndex} 主码流或者为子码流
      *  注意：调用该方法之前，videoType 通道的媒体参数必须已经通过{@link com.tuya.smart.aiipc.ipc_sdk.impl.ParamConfigManager} 设置
-     *
+     * @return success: 0 fase: !0
      * */
    int startEchoShowAndChromecast(int videoType);
    
@@ -39,6 +41,7 @@ public interface IMediaTransManager {
      * @param nalType 是视频流时，为H264码流的nal类型. 是音频流时，此参数无效，默认为0
      * @param streamData 码流数据
      * @param timeStamp 每一帧数据产生的时间戳
+     * @return success: 0 fase: !0
      * */
     int pushMediaStream(int streamType, int nalType, byte[] streamData, long timeStamp);
     
@@ -48,11 +51,29 @@ public interface IMediaTransManager {
      * @param cb
      * */
     void addAudioTalkCallback(AudioTalkCallback cb);
+    
+    interface AudioTalkCallback {
+    /**
+     * 开启对讲后的数据回调接口
+     * @param data 对讲回调数据. 回调之后的数据格式为PCM
+     * */
+    	void onAudioTalkData(byte[] data);
+	}
 
 	/**
      * 注册P2P回调接口
      * */
     void setP2PEventCallback(IP2PEventCallback cb);
+    
+    interface IP2PEventCallback {
+    /**
+     * p2p 事件回调
+     * @param event 请求事件{@link IMediaTransManager.P2PEvent}
+     * @param value 请求事件的值
+     * */
+    void onEvent(IMediaTransManager.P2PEvent event,Object value);
+    
+    }
     
     //p2p事件定义
 	enum P2PEvent{
