@@ -394,13 +394,20 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="&#x4E91;&#x5B58;&#x50A8;">&#x4E91;&#x5B58;&#x50A8;</h2>
+<blockquote>
+<p>&#x8BF4;&#x660E;&#xFF1A;  </p>
+<ol>
+<li>&#x8FDE;&#x7EED;&#x5B58;&#x50A8;&#xFF1A;&#x8C03;&#x7528;startCloudStorage&#xFF0C;&#x53EA;&#x4F1A;&#x6253;&#x5F00;&#x4E91;&#x7AEF;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x5F00;&#x5173;&#xFF0C;&#x4E0D;&#x4F1A;&#x5411;&#x4E91;&#x7AEF;&#x63A8;&#x89C6;&#x9891;&#x3002;&#x5F53;&#x524D;&#x6CA1;&#x6709;&#x63A8;&#x6D41;&#x5C31;&#x6CA1;&#x6709;&#x4FDD;&#x5B58;&#xFF0C;&#x4E00;&#x65E6;&#x5F00;&#x59CB;&#x63A8;&#x6D41;&#x4E86;&#xFF0C;&#x5C31;&#x4F1A;&#x4FDD;&#x5B58;&#x3002;  </li>
+<li>&#x4E8B;&#x4EF6;&#x5B58;&#x50A8;&#xFF1A;&#x8C03;&#x7528;addCloudStorageEvent&#xFF0C;&#x4F1A;&#x4E0A;&#x62A5;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E5F;&#x4F1A;&#x4FDD;&#x5B58;&#x4E91;&#x5B58;&#x50A8;&#x89C6;&#x9891;&#xFF08;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;startCloudStorage&#x5F00;&#x542F;&#x4E86;&#x8FDE;&#x7EED;&#x5B58;&#x50A8;&#xFF09;&#xFF1B;&#x8C03;&#x7528;deleteCloudStorageEvent&#xFF0C;&#x4F1A;&#x7ED3;&#x675F;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;&#xFF0C;&#x4E5F;&#x4F1A;&#x505C;&#x6B62;&#x4FDD;&#x5B58;&#x4E91;&#x5B58;&#x50A8;&#x89C6;&#x9891;&#xFF08;&#x5982;&#x679C;&#x5DF2;&#x7ECF;&#x4F7F;&#x7528;&#x4E86;startCloudStorage&#xFF09;</li>
+</ol>
+</blockquote>
 <pre><code class="lang-java">IMediaTransManager transManager = IPCServiceManager.getInstance()
 .getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
 
 <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IMediaTransManager</span> </span>{
 
     <span class="hljs-comment">/**
-     * &#x5F00;&#x542F;/&#x6682;&#x505C;/&#x6062;&#x590D; &#x4E91;&#x5B58;&#x50A8;
+     * &#x5F00;&#x542F;/&#x6682;&#x505C;/&#x6062;&#x590D; &#x4E91;&#x5B58;&#x50A8;&#xFF08;&#x8FDE;&#x7EED;&#x5B58;&#x50A8;&#xFF09;
      * <span class="hljs-doctag">@return</span> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6; event id
      */</span>
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">startCloudStorage</span><span class="hljs-params">()</span></span>;
@@ -409,25 +416,8 @@
 
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">resumeCloudStorage</span><span class="hljs-params">()</span></span>;
 
-    <span class="hljs-comment">/**
-     * &#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;.
-     *
-     * <span class="hljs-doctag">@param</span> snap_buffer   jpeg &#x6570;&#x636E;, &#x5927;&#x5C0F;&#x4E0D;&#x8D85;&#x8FC7;100k
-     * <span class="hljs-doctag">@param</span> snapshot_size
-     * <span class="hljs-doctag">@param</span> type          &#x4E91;&#x5B58;&#x50A8;&#x65F6;&#x95F4;&#x7C7B;&#x578B;
-     * <span class="hljs-doctag">@return</span> &#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6; event id
-     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">startCloudStorageEvent</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] snap_buffer, <span class="hljs-keyword">int</span> snapshot_size, <span class="hljs-keyword">int</span> type)</span></span>;
-
-    <span class="hljs-comment">/**
-     * &#x505C;&#x6B62;&#x4E00;&#x4E2A;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;
-     *
-     * <span class="hljs-doctag">@param</span> eventId #addCloudStorageEvent &#x8FD4;&#x56DE;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;id
-     */</span>
-    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">stopCloudStorageEvent</span><span class="hljs-params">()</span></span>;
-
      <span class="hljs-comment">/**
-     * &#x6DFB;&#x52A0;&#x4E00;&#x4E2A;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;.
+     * &#x542F;&#x52A8;&#x4E00;&#x4E2A;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;&#xFF08;&#x4E8B;&#x4EF6;&#x5B58;&#x50A8;&#xFF09;
      *
      * <span class="hljs-doctag">@param</span> snap_buffer   jpeg &#x6570;&#x636E;, &#x5927;&#x5C0F;&#x4E0D;&#x8D85;&#x8FC7;100k
      * <span class="hljs-doctag">@param</span> snapshot_size
@@ -438,7 +428,7 @@
     <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">addCloudStorageEvent</span><span class="hljs-params">(<span class="hljs-keyword">byte</span>[] snap_buffer, <span class="hljs-keyword">int</span> snapshot_size, <span class="hljs-keyword">int</span> type, <span class="hljs-keyword">int</span> maxDuration)</span></span>;
 
     <span class="hljs-comment">/**
-     * &#x5220;&#x9664;&#x4E00;&#x4E2A;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;
+     * &#x505C;&#x6B62;&#x4E00;&#x4E2A;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;&#xFF08;&#x4E8B;&#x4EF6;&#x5B58;&#x50A8;&#xFF09;
      *
      * <span class="hljs-doctag">@param</span> eventId #addCloudStorageEvent &#x8FD4;&#x56DE;&#x7684;&#x4E91;&#x5B58;&#x50A8;&#x4E8B;&#x4EF6;id
      */</span>
@@ -501,7 +491,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"云存储","level":"1.5.5","depth":2,"next":{"title":"移动侦测","level":"1.5.6","depth":2,"path":"sdk-api/motion.md","ref":"sdk-api/motion.md","articles":[]},"previous":{"title":"设备信息","level":"1.5.4","depth":2,"path":"sdk-api/device.md","ref":"sdk-api/device.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/cloud.md","mtime":"2019-12-11T07:14:10.215Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-05-07T07:45:01.650Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"云存储","level":"1.5.5","depth":2,"next":{"title":"移动侦测","level":"1.5.6","depth":2,"path":"sdk-api/motion.md","ref":"sdk-api/motion.md","articles":[]},"previous":{"title":"设备信息","level":"1.5.4","depth":2,"path":"sdk-api/device.md","ref":"sdk-api/device.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/cloud.md","mtime":"2020-06-16T07:58:34.267Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T08:01:21.516Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

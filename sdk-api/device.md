@@ -1,5 +1,7 @@
 ## 设备相关信息
 
+> 注意：当前页面的方法 SDK只提供默认实现，接入时需要自己实现。
+
 ```java
 IDeviceManager deviceManager = IPCServiceManager
 .getInstance().getService(IPCServiceManager.IPCService.DEVICE_SERVICE);
