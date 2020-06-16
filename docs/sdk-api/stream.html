@@ -428,6 +428,37 @@
      * */</span>
    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">startEchoShowAndChromecast</span><span class="hljs-params">(<span class="hljs-keyword">int</span> videoType)</span></span>;
 
+
+   <span class="hljs-comment">/**
+     * &#x7801;&#x6D41;&#x901A;&#x9053;&#x7C7B;&#x578B;
+     * */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Common</span>.<span class="hljs-title">ChannelIndex</span> </span>{
+
+        <span class="hljs-comment">/**
+         * &#x89C6;&#x9891;&#x6D41;&#x8DEF;&#x6570;
+         */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_VIDEO_MAIN = <span class="hljs-number">0</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_VIDEO_SUB = <span class="hljs-number">1</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_VIDEO_3RD = <span class="hljs-number">2</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_VIDEO_4TH = <span class="hljs-number">3</span>;
+        <span class="hljs-comment">/**
+         * &#x6700;&#x5927;&#x652F;&#x6301;&#x89C6;&#x9891;&#x7801;&#x6D41;&#x8DEF;&#x6570;
+         */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_VIDEO_MAX = <span class="hljs-number">8</span>;
+
+        <span class="hljs-comment">/**
+         * &#x97F3;&#x9891;&#x6D41;&#x8DEF;&#x6570;
+         */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_AUDIO = <span class="hljs-number">9</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_AUDIO_2RD = <span class="hljs-number">10</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_AUDIO_3RD = <span class="hljs-number">11</span>;
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_AUDIO_4TH = <span class="hljs-number">12</span>;
+        <span class="hljs-comment">/**
+         * &#x6700;&#x5927;&#x652F;&#x6301;&#x97F3;&#x9891;&#x7801;&#x6D41;&#x8DEF;&#x6570;
+         * */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> E_CHANNEL_MAX = <span class="hljs-number">16</span>;
+    }
+
        <span class="hljs-comment">/**
      * push &#x4E00;&#x5E27;&#x591A;&#x5A92;&#x4F53;&#x6D41;&#x5230;SDK
      * <span class="hljs-doctag">@param</span> streamType &#x5A92;&#x4F53;&#x6570;&#x636E;&#x7C7B;&#x578B; {<span class="hljs-doctag">@link</span> Common.ChannelIndex}
@@ -527,7 +558,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"音视频流","level":"1.5.8","depth":2,"next":{"title":"其他API","level":"1.5.9","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"previous":{"title":"低功耗","level":"1.5.7","depth":2,"path":"sdk-api/low.md","ref":"sdk-api/low.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/stream.md","mtime":"2020-05-07T02:33:35.428Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T08:36:20.050Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"音视频流","level":"1.5.8","depth":2,"next":{"title":"其他API","level":"1.5.9","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"previous":{"title":"低功耗","level":"1.5.7","depth":2,"path":"sdk-api/low.md","ref":"sdk-api/low.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/stream.md","mtime":"2020-06-16T09:47:49.883Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T09:48:06.060Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

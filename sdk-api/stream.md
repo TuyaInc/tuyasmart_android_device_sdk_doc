@@ -35,6 +35,37 @@ public interface IMediaTransManager {
      * */
    int startEchoShowAndChromecast(int videoType);
    
+   
+   /**
+     * 码流通道类型
+     * */
+    public class Common.ChannelIndex {
+
+        /**
+         * 视频流路数
+         */
+        public static final int E_CHANNEL_VIDEO_MAIN = 0;
+        public static final int E_CHANNEL_VIDEO_SUB = 1;
+        public static final int E_CHANNEL_VIDEO_3RD = 2;
+        public static final int E_CHANNEL_VIDEO_4TH = 3;
+        /**
+         * 最大支持视频码流路数
+         */
+        public static final int E_CHANNEL_VIDEO_MAX = 8;
+
+        /**
+         * 音频流路数
+         */
+        public static final int E_CHANNEL_AUDIO = 9;
+        public static final int E_CHANNEL_AUDIO_2RD = 10;
+        public static final int E_CHANNEL_AUDIO_3RD = 11;
+        public static final int E_CHANNEL_AUDIO_4TH = 12;
+        /**
+         * 最大支持音频码流路数
+         * */
+        public static final int E_CHANNEL_MAX = 16;
+    }
+   
        /**
      * push 一帧多媒体流到SDK
      * @param streamType 媒体数据类型 {@link Common.ChannelIndex}
