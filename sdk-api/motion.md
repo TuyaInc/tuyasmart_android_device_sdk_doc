@@ -7,18 +7,6 @@ IFeatureManager featureManager = IPCServiceManager.getInstance()
 public interface IFeatureManager {
 
     /**
-     * 设置上传视频开关
-     * @param on
-     */
-    void setUploadVideo(boolean on);
-
-    /**
-     * 设置存储事件
-     * @param type
-     */
-    void setStoryType(StoreType type);
-
-    /**
      * 初始化图像移动侦测
      * @param frame_w 图像宽
      * @param frame_h 图像高
