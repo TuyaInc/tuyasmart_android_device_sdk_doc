@@ -440,21 +440,20 @@
 
     <span class="hljs-comment">/**
      * &#x8BBE;&#x7F6E;&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x533A;&#x57DF;
-     * <span class="hljs-doctag">@param</span> index &#x533A;&#x57DF;index
      * <span class="hljs-doctag">@param</span> x &#x8D77;&#x59CB;&#x5750;&#x6807;x
      * <span class="hljs-doctag">@param</span> y &#x8D77;&#x59CB;&#x5750;&#x6807;y
      * <span class="hljs-doctag">@param</span> w &#x8D77;&#x59CB;&#x70B9;&#x6A2A;&#x5411;&#x504F;&#x79FB;
      * <span class="hljs-doctag">@param</span> h &#x8D77;&#x59CB;&#x70B9;&#x7EB5;&#x5411;&#x504F;&#x79FB;
      * */</span>
-    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setMotionRegion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> index, <span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> w, <span class="hljs-keyword">int</span> h)</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setMotionRegion</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y, <span class="hljs-keyword">int</span> w, <span class="hljs-keyword">int</span> h)</span></span>;
 
     <span class="hljs-comment">/**
      * &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;
      * <span class="hljs-doctag">@param</span> pixelData &#x9700;&#x8981;&#x4FA6;&#x6D4B;&#x7684;&#x56FE;&#x50CF;&#x6570;&#x636E;&#xFF0C; &#x5FC5;&#x987B;&#x4E3A;YUV &#x683C;&#x5F0F;
-     * <span class="hljs-doctag">@param</span> motionResult &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C; motionResult[0]: &#x4FA6;&#x6D4B;&#x662F;&#x5426;&#x6709;&#x7ED3;&#x679C;(1: &#x6709;&#x7ED3;&#x679C; 0: &#x65E0;&#x7ED3;&#x679C;)
-     *                     (motionResult[1]:motionResult[2]) &#x4FA6;&#x6D4B;&#x7ED3;&#x679C;&#x7684;&#x5750;&#x6807;
-     * return success: 1 failed: !1 */</span>
-    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">detectMotion</span><span class="hljs-params">(ByteBuffer pixelData, <span class="hljs-keyword">int</span>[] motionResult)</span></span>;
+     * return motionResult &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C; &#x5931;&#x8D25;&#x8FD4;&#x56DE;&#x7A7A;&#x6570;&#x7EC4;; 
+     * &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x7684;&#x8FD4;&#x56DE;&#x7ED3;&#x679C;&#x6570;&#x7EC4;, motionResult[0]: &#x4FA6;&#x6D4B;&#x662F;&#x5426;&#x6709;&#x7ED3;&#x679C;(1: &#x6709;&#x7ED3;&#x679C; 0: &#x65E0;&#x7ED3;&#x679C;)&#x3001;(motionResult[1]:motionResult[2]) &#x4FA6;&#x6D4B;&#x7ED3;&#x679C;&#x7684;&#x5750;&#x6807;
+     * */</span>
+    <span class="hljs-keyword">int</span>[] detectMotion(ByteBuffer pixelData);
 
     <span class="hljs-comment">/**
      * &#x53CD;&#x521D;&#x59CB;&#x5316;&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;
@@ -506,7 +505,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"移动侦测","level":"1.5.6","depth":2,"next":{"title":"低功耗","level":"1.5.7","depth":2,"path":"sdk-api/low.md","ref":"sdk-api/low.md","articles":[]},"previous":{"title":"云存储","level":"1.5.5","depth":2,"path":"sdk-api/cloud.md","ref":"sdk-api/cloud.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/motion.md","mtime":"2020-06-16T08:35:50.111Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-16T09:48:06.060Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"移动侦测","level":"1.5.6","depth":2,"next":{"title":"低功耗","level":"1.5.7","depth":2,"path":"sdk-api/low.md","ref":"sdk-api/low.md","articles":[]},"previous":{"title":"云存储","level":"1.5.5","depth":2,"path":"sdk-api/cloud.md","ref":"sdk-api/cloud.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/motion.md","mtime":"2020-06-18T09:42:56.159Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-06-18T09:43:16.061Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

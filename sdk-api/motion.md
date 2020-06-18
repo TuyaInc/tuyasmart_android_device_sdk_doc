@@ -47,21 +47,20 @@ public interface IFeatureManager {
 
     /**
      * 设置移动侦测区域
-     * @param index 区域index
      * @param x 起始坐标x
      * @param y 起始坐标y
      * @param w 起始点横向偏移
      * @param h 起始点纵向偏移
      * */
-    void setMotionRegion(int index, int x, int y, int w, int h);
+    void setMotionRegion(int x, int y, int w, int h);
 
-    /**
+	/**
      * 移动侦测
      * @param pixelData 需要侦测的图像数据， 必须为YUV 格式
-     * @param motionResult 移动侦测的返回结果 motionResult[0]: 侦测是否有结果(1: 有结果 0: 无结果)
-     *                     (motionResult[1]:motionResult[2]) 侦测结果的坐标
-     * return success: 1 failed: !1 */
-    int detectMotion(ByteBuffer pixelData, int[] motionResult);
+     * return motionResult 移动侦测的返回结果 失败返回空数组; 
+     * 移动侦测的返回结果数组, motionResult[0]: 侦测是否有结果(1: 有结果 0: 无结果)、(motionResult[1]:motionResult[2]) 侦测结果的坐标
+     * */
+    int[] detectMotion(ByteBuffer pixelData);
 
     /**
      * 反初始化移动侦测
