@@ -30,7 +30,7 @@ public interface IMediaTransManager {
     /**
      * 启动EchoShow和Chromecast
      * @param videoType 传输的视频流类型 {@link Common.ChannelIndex} 主码流或者为子码流
-     *  注意：调用该方法之前，videoType 通道的媒体参数必须已经通过{@link com.tuya.smart.aiipc.ipc_sdk.impl.ParamConfigManager} 设置
+     *  注意：调用该方法之前，先启动多媒体传输通道, 并且videoType 通道的媒体参数必须已经通过{@link com.tuya.smart.aiipc.ipc_sdk.impl.ParamConfigManager} 设置
      * @return success: 0 fase: !0
      * */
    int startEchoShowAndChromecast(int videoType);
