@@ -119,6 +119,30 @@ public interface IMediaTransManager {
         TRANS_SPEAKER_START(16),   /**对讲请求 */
         TRANS_SPEAKER_STOP(17);
         }
+        
+   /**
+     * 设置门铃呼叫状态回调接口
+     * 注该接口之后，将接收到门铃呼叫后的接听和挂断状态
+     * 门铃呼叫报警接听状态：
+     * status = -1 未知状态
+     * status = 0 接听
+     * status = 1 挂断
+     * status = 2 通话中心跳
+     * {@link Common.DoorBellCallStatus}
+   * */
+    void setDoorBellCallStatusCallback(@AutoTestInterface IDoorBellCallStatusCb cb);
+
+
+    /**
+     * 当门铃按下时device端发送门铃呼叫到App端和云端. 此时呼叫界面显示为本地视频画面
+     * @param data 发送呼叫时需要附带一张图片
+     * @param snapType 图片的类型 {@link Common.NOTIFICATION_CONTENT_TYPE_E}
+     * 视频，.mp4文件 NOTIFICATION_CONTENT_MP4
+     * 图片，.jpeg文件 NOTIFICATION_CONTENT_JPEG
+     * 图片，.png文件 NOTIFICATION_CONTENT_PNG
+     * @return 0: success !0: failed
+     * */
+    int sendDoorBellCallForPress(@Nullable byte[] data, int snapType);
 	
 }
 
