@@ -9,13 +9,14 @@ maven { url 'https://maven-other.tuya.com/repository/maven-snapshots/'}
 ```
 
 ```groovy
-implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.0'
+implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.3'
 
 implementation 'com.android.support:appcompat-v7:28.0.0'
 implementation 'com.tencent:mmkv:1.0.18'
 implementation 'com.google.code.gson:gson:2.8.5'
 implementation 'com.alibaba:fastjson:1.1.67.android'
 implementation 'com.google.zxing:core:3.3.0'
+implementation 'com.tencent.mars:mars-xlog:1.2.3'
 ```
 
 ```groovy
@@ -27,6 +28,12 @@ compileOptions {
         sourceCompatibility = '1.8'
         targetCompatibility = '1.8'
     }
+```
+
+## 防混淆
+```groovy
+-keep class com.tuya.** {*;}
+-keep class com.tencent.mars.** {*;}
 ```
 
 ## 权限配置
@@ -239,7 +246,7 @@ transManager.initTransSDK(token, basePath, recordPath,
 
 ```
 
-### <div id="开始推流"> **4.开始推流** </div>
+### <div id="开始推流">**4.开始推流**</div>
 
 推流需要在设备激活成功后发起，即MQTT上线时
 

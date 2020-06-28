@@ -117,3 +117,7 @@ iNetConfigManager.config(INetConfigManager.QR_PARAMETERS, (INetConfigManager.OnP
 > 原因：设备休眠后会导致MQTT心跳停止，和云端服务断开。  
 > 解决方式：在设备休眠时，开启定时服务（建议使用AlarmManager
 > ）调用主动心跳函数`IMqttProcessManager.sendHeartbeat()`，时间间隔不超过120s。
+
+###如何抓取SDK日志
+
+> 可以通过Logcat查看；也可以开启[本地日志](./sdk-api/other.md)后获取自动保存的日志文件，日志文件为xlog编码文件，可以使用[解密脚本](https://github.com/Tencent/mars/wiki/Xlog-%E5%8A%A0%E5%AF%86%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95)查看。
