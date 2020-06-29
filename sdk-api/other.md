@@ -29,3 +29,22 @@ IPCSDK.openWriteLog(this, "/sdcard/tuya_log/ipc", 3);
 //关闭日志保存，在程序退出时调用
 IPCSDK.closeWriteLog();
 ```
+
+### 本地录像
+
+```java
+/**
+ * 开始本地录像, 录像存储路径为激活设备时传入的 recordPath
+ */
+TransJNIInterface.getInstance().startLocalStorage();
+
+/**
+ * 停止本地录像
+ */
+TransJNIInterface.getInstance().stopLocalStorage();
+
+/**
+ * 清空本地录像
+ */
+TransJNIInterface.getInstance().cleanRecord();
+```
