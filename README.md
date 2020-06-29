@@ -13,7 +13,13 @@ Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](h
 
 > 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
 
-
+* **IPC\_SDK for v1.0.4 \(2020-6-29\)**
+	* 嵌入式SDK更新到最新版
+	* 新增本地日志保存
+	* 优化配网重试
+	* 修复推流阻塞问题
+	* 修复P2P导致的无响应
+	* 优化解绑逻辑
 * **IPC\_SDK for v0.1.6 \(2019-11-08\)**
 
   * 新增用户发送/订阅指定mqtt消息api
