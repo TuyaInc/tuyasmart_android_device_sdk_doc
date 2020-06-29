@@ -33,7 +33,6 @@ compileOptions {
 ## 防混淆
 ```groovy
 -keep class com.tuya.** {*;}
--keep class com.tencent.mars.** {*;}
 ```
 
 ## 权限配置
