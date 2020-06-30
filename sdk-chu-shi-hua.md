@@ -9,7 +9,7 @@ maven { url 'https://maven-other.tuya.com/repository/maven-snapshots/'}
 ```
 
 ```groovy
-implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.4'
+implementation 'com.tuya.smart:tuyasmart-ipc_sdk:1.0.5'
 
 implementation 'com.android.support:appcompat-v7:28.0.0'
 implementation 'com.tencent:mmkv:1.0.18'
