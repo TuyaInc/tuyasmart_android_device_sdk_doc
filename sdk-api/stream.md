@@ -6,6 +6,7 @@ public interface IMediaTransManager {
 	
 	/**
      * 启动多媒体传输通道.这个方法必须调用，否则无法push 数据流到App端，也无法接受Mqtt消息.
+     * (注意： 需要在MQTT上线时开启，请参看文档"SDK初始化-开始推流"部分)
      * 调用这个方法之后，可用通过{@link IMediaTransManager#pushMediaStream(int, int, byte[], long)} 方法push
      * 一帧数据流到该SDK
      * @return success: 0 fase: !0

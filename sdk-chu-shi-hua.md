@@ -245,7 +245,7 @@ transManager.initTransSDK(token, basePath, recordPath,
 
 ```
 
-### <div id="开始推流">**4.开始推流**</div>
+### <div id="开始推流">**5.开始推流**</div>
 
 推流需要在设备激活成功后发起，即MQTT上线时
 
