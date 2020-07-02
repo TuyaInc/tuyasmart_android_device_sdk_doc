@@ -13,6 +13,8 @@ Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](h
 
 > 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
 
+* **IPC\_SDK for v1.0.6 \(2020-7-2\)**
+	* 依赖优化
 * **IPC\_SDK for v1.0.5 \(2020-6-30\)**
 	* 修复测试文件写入失败导致的本地录像无效问题
 * **IPC\_SDK for v1.0.4 \(2020-6-29\)**
