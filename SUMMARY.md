@@ -15,7 +15,6 @@
 	* [设备信息](sdk-api/device.md)
 	* [云存储](sdk-api/cloud.md)
 	* [移动侦测](sdk-api/motion.md)
-	* [低功耗](sdk-api/low.md)
 	* [音视频流](sdk-api/stream.md)
 	* [其他API](sdk-api/other.md)
 * [FAQ](faq.md)
