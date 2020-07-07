@@ -9,9 +9,10 @@ public interface IMediaTransManager {
      * (注意： 需要在MQTT上线时开启，请参看文档"SDK初始化-开始推流"部分)
      * 调用这个方法之后，可用通过{@link IMediaTransManager#pushMediaStream(int, int, byte[], long)} 方法push
      * 一帧数据流到该SDK
+     * @param max 接收并发量
      * @return success: 0 fase: !0
      * */
-    int startMultiMediaTrans();
+    int startMultiMediaTrans(int max);
     
     /**
      * 关闭多媒体传输通道.
@@ -24,9 +25,10 @@ public interface IMediaTransManager {
      * 关闭多媒体传输通道.
      * 设备端通过该方法可以主动发起呼叫挂断，然后重新开启p2p 通道.
      * 因为关闭通道之后，多媒体流无法push到client端，也无法接受Mqtt消息. 所以，发起主动挂断呼叫之后，需要重新开启此通道.
+     * @param max 接收并发量
      * @return success: 0 fase: !0
      * */
-    int stopAndRestartMultiMediaTrans();
+    int stopAndRestartMultiMediaTrans(int max);
 
     /**
      * 启动EchoShow和Chromecast
