@@ -8,51 +8,47 @@ public interface IFeatureManager {
 
     /**
      * 初始化图像移动侦测
-     * @param frame_w 图像宽
-     * @param frame_h 图像高
-     * @param sensitivity 移动侦测灵敏度，设置1-3,对应越来越灵敏
-     * @param y_thd 移动侦测评判阈值，默认30 低照度可降低调试
-     * @param x 侦测区域左上角坐标x
-     * @param y 侦测区域左上角坐标y
-     * @param w 侦测区域宽
-     * @param h 侦测区域高
-     * @param tracking_enable 是否进行跟踪 0: 关闭跟踪 1: 开启跟踪
      *
+     * @param frame_w         图像宽
+     * @param frame_h         图像高
+     * @param sensitivity     移动侦测灵敏度，数值越大对应越灵敏 取值范围[1,3]
+     * @param y_thd           移动侦测评判阈值，默认30 低照度可降低调试 取值范围[5,30]
+     * @param x               侦测区域左上角坐标x所占比例 取值范围[0, 100]
+     * @param y               侦测区域左上角坐标y所占比例 取值范围[0, 100]
+     * @param w               侦测区域宽所占比例 取值范围[0, 100]
+     * @param h               侦测区域高所占比例 取值范围[0, 100]
+     * @param tracking_enable 是否进行跟踪 0: 关闭跟踪 1: 开启跟踪
      * @return success: true failed: false
-     * */
+     */
     boolean initMotionDetect(int frame_w, int frame_h, int sensitivity, int y_thd,
                              int x, int y, int w, int h, int tracking_enable);
-
-    /**
-     * 设置移动侦测图片分辨率
-     * @param frame_w
-     * @param frame_h
-     * */
-    void setMotionFrameSize(int frame_w, int frame_h);
 
     /**
      * 设置移动侦测灵阈值
      * 范围[5-30]. 白天光照强烈阈值可以调大，晚上时光线暗，阈值调小
      *
      * @param threshold
+     * @return 是否设置成功
      * */
-    void setMotionThreshold(int threshold);
+    boolean setMotionThreshold(int threshold);
 
     /**
      * 设置移动侦测灵敏度
      * 灵敏度范围[1-3], 灵敏度越来越高
      * @param sensitivity
+     * @return 是否设置成功
      * */
-    void setMotionSensitivity(int sensitivity);
+    boolean setMotionSensitivity(int sensitivity);
 
     /**
      * 设置移动侦测区域
-     * @param x 起始坐标x
-     * @param y 起始坐标y
-     * @param w 起始点横向偏移
-     * @param h 起始点纵向偏移
+     * @param x 起始坐标x所占比例 取值范围[0, 100]
+     * @param y 起始坐标y所占比例 取值范围[0, 100]
+     * @param w 起始点横向偏移所占比例 取值范围[0, 100]
+     * @param h 起始点纵向偏移所占比例 取值范围[0, 100]
+     * @return 是否设置成功
      * */
-    void setMotionRegion(int x, int y, int w, int h);
+    boolean setMotionRegion(int x, int y, int w, int h);
 
 	/**
      * 移动侦测
