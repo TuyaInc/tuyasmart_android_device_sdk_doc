@@ -13,6 +13,8 @@ Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](h
 
 > 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
 
+* **IPC\_SDK for v1.0.9 \(2020-7-18\)**
+	* 兼容最低版本到Android 4.4
 * **IPC\_SDK for v1.0.8 \(2020-7-7\)**
 	* 开放视频流接收并发数参数设置
 * **IPC\_SDK for v1.0.7 \(2020-7-4\)**
