@@ -74,10 +74,9 @@ public interface IMediaTransManager {
      * @param streamType 媒体数据类型 {@link Common.ChannelIndex}
      * @param nalType 是视频流时，为H264码流的nal类型. 是音频流时，此参数无效，默认为0
      * @param streamData 码流数据
-     * @param timeStamp 每一帧数据产生的时间戳
      * @return success: 0 fase: !0
      * */
-    int pushMediaStream(int streamType, int nalType, byte[] streamData, long timeStamp);
+    int pushMediaStream(int streamType, int nalType, byte[] streamData);
     
     /**
      * 注册对讲回调接口

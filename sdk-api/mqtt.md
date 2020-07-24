@@ -37,6 +37,18 @@ public interface IMqttProcessManager {
      * 自己控制发送心跳包
      */
     public boolean sendHeartbeat();
+    
+    /**
+     * 开启低功耗模式
+     * @param interval 间隔时间
+     * @param callback 唤醒回调
+     */
+    public boolean enableLowPower(int interval, WakeUpCallback callback);
+
+    /**
+     * 关闭低功耗模式
+     */
+    public boolean disableLowPower();
 
     /**
      * 主动发送MQTT消息
