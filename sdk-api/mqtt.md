@@ -46,6 +46,7 @@ public interface IMqttProcessManager {
     public boolean disableLowPower();
 
     /**
+
      * 主动发送MQTT消息
      * @param protocol  协议编号
      * @param jsonString    消息体
