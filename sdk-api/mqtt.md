@@ -32,15 +32,10 @@ public interface IMqttProcessManager {
          * */
         public static final int STATUS_ALREADY_BIND = 9;
     }
-
-    /**
-     * 自己控制发送心跳包
-     */
-    public boolean sendHeartbeat();
     
     /**
      * 开启低功耗模式
-     * @param interval 间隔时间
+     * @param interval 心跳间隔时间（单位秒，设置为120以内）
      * @param callback 唤醒回调
      */
     public boolean enableLowPower(int interval, WakeUpCallback callback);
