@@ -95,12 +95,6 @@ public class DPEvent {
      */
     public static final int TUYA_DP_SD_UMOUNT = 112;
 
-
-    /**
-     * 移动侦测消息报警
-     */
-    public static final int TUYA_DP_MOTION_DETECTION_ALARM = 115;
-
     /**
      * 云台转动停止,BOOL类型
      */
