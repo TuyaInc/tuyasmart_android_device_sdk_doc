@@ -48,3 +48,20 @@ TransJNIInterface.getInstance().stopLocalStorage();
  */
 TransJNIInterface.getInstance().cleanRecord();
 ```
+
+### 自定义DNS解析
+
+```java
+
+interface DNSHandler {
+    /**
+      * 解析域名 返回ip
+      */
+    String getIP(String hostname);
+}
+
+/**
+ * 设置自定义解析处理
+ */
+IPCServiceManager.getInstance().setDnsHandler(handler);
+```

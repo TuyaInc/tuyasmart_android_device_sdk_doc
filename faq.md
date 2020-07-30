@@ -121,3 +121,7 @@ iNetConfigManager.config(INetConfigManager.QR_PARAMETERS, (INetConfigManager.OnP
 ###如何抓取SDK日志
 
 > 可以通过Logcat查看；也可以开启[本地日志](./sdk-api/other.md)后获取自动保存的日志文件，日志文件为xlog编码文件，可以使用[解密脚本](https://github.com/Tencent/mars/wiki/Xlog-%E5%8A%A0%E5%AF%86%E4%BD%BF%E7%94%A8%E6%8C%87%E5%BC%95)查看。
+
+###SDK网络请求错误：`No entry for host xxx`
+
+> 底层dns解析失败了，可能为硬件或ROM所致，可以[设置自定义DNS解析](./sdk-api/other.md)尝试解决
