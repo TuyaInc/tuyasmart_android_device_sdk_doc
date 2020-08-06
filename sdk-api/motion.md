@@ -63,5 +63,29 @@ public interface IFeatureManager {
      * */
     void releaseMotion();
 
+    /**
+     * 上报门铃事件到涂鸦云端和App端
+     * @param notifyType 门铃事件的类型 {@link Common.DOORBELL_NOTIFICATION_TYPE}
+     * @param picData 上报事件附带的图片数据
+     * @param picType 图片数据格式 {@link Common.NOTIFICATION_CONTENT_TYPE_E}
+     * jpeg文件 NOTIFICATION_CONTENT_JPEG，png文件 NOTIFICATION_CONTENT_PNG
+     * */
+    int notifyDoorBellEvent(int notifyType, byte[] picData, int picType);
+
+    /**
+     * 门铃事件上报
+     * */
+    public class DOORBELL_NOTIFICATION_TYPE {
+        public static final int NOTIFICATION_NAME_MOTION = 0;             /* 移动侦测 */
+        public static final int NOTIFICATION_NAME_DOORBELL = 1;           /* 门铃按下 */
+        public static final int NOTIFICATION_NAME_DEV_LINK = 2;           /* IOT设备联动触发 */
+        public static final int NOTIFICATION_NAME_PASSBY = 3;             /* 正常经过 */
+        public static final int NOTIFICATION_NAME_LINGER = 4;            /* 异常逗留 */
+        public static final int NOTIFICATION_NAME_MESSAGE = 5;            /* 留言信息 */
+        public static final int NOTIFICATION_NAME_CALL_ACCEPT = 6;       /* 门铃接听 */
+        public static final int NOTIFICATION_NAME_CALL_NOT_ACCEPT = 7;    /* 门铃未接听 */
+        public static final int NOTIFICATION_NAME_HUMAN = 8;              /* 人形检测*/
+    }
+
 }
 ```

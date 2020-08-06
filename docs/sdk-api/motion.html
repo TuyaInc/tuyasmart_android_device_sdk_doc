@@ -443,6 +443,30 @@
      * */</span>
     <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">releaseMotion</span><span class="hljs-params">()</span></span>;
 
+    <span class="hljs-comment">/**
+     * &#x4E0A;&#x62A5;&#x95E8;&#x94C3;&#x4E8B;&#x4EF6;&#x5230;&#x6D82;&#x9E26;&#x4E91;&#x7AEF;&#x548C;App&#x7AEF;
+     * <span class="hljs-doctag">@param</span> notifyType &#x95E8;&#x94C3;&#x4E8B;&#x4EF6;&#x7684;&#x7C7B;&#x578B; {<span class="hljs-doctag">@link</span> Common.DOORBELL_NOTIFICATION_TYPE}
+     * <span class="hljs-doctag">@param</span> picData &#x4E0A;&#x62A5;&#x4E8B;&#x4EF6;&#x9644;&#x5E26;&#x7684;&#x56FE;&#x7247;&#x6570;&#x636E;
+     * <span class="hljs-doctag">@param</span> picType &#x56FE;&#x7247;&#x6570;&#x636E;&#x683C;&#x5F0F; {<span class="hljs-doctag">@link</span> Common.NOTIFICATION_CONTENT_TYPE_E}
+     * jpeg&#x6587;&#x4EF6; NOTIFICATION_CONTENT_JPEG&#xFF0C;png&#x6587;&#x4EF6; NOTIFICATION_CONTENT_PNG
+     * */</span>
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">notifyDoorBellEvent</span><span class="hljs-params">(<span class="hljs-keyword">int</span> notifyType, <span class="hljs-keyword">byte</span>[] picData, <span class="hljs-keyword">int</span> picType)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x95E8;&#x94C3;&#x4E8B;&#x4EF6;&#x4E0A;&#x62A5;
+     * */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DOORBELL_NOTIFICATION_TYPE</span> </span>{
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_MOTION = <span class="hljs-number">0</span>;             <span class="hljs-comment">/* &#x79FB;&#x52A8;&#x4FA6;&#x6D4B; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_DOORBELL = <span class="hljs-number">1</span>;           <span class="hljs-comment">/* &#x95E8;&#x94C3;&#x6309;&#x4E0B; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_DEV_LINK = <span class="hljs-number">2</span>;           <span class="hljs-comment">/* IOT&#x8BBE;&#x5907;&#x8054;&#x52A8;&#x89E6;&#x53D1; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_PASSBY = <span class="hljs-number">3</span>;             <span class="hljs-comment">/* &#x6B63;&#x5E38;&#x7ECF;&#x8FC7; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_LINGER = <span class="hljs-number">4</span>;            <span class="hljs-comment">/* &#x5F02;&#x5E38;&#x9017;&#x7559; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_MESSAGE = <span class="hljs-number">5</span>;            <span class="hljs-comment">/* &#x7559;&#x8A00;&#x4FE1;&#x606F; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_CALL_ACCEPT = <span class="hljs-number">6</span>;       <span class="hljs-comment">/* &#x95E8;&#x94C3;&#x63A5;&#x542C; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_CALL_NOT_ACCEPT = <span class="hljs-number">7</span>;    <span class="hljs-comment">/* &#x95E8;&#x94C3;&#x672A;&#x63A5;&#x542C; */</span>
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> NOTIFICATION_NAME_HUMAN = <span class="hljs-number">8</span>;              <span class="hljs-comment">/* &#x4EBA;&#x5F62;&#x68C0;&#x6D4B;*/</span>
+    }
+
 }
 </code></pre>
 
@@ -488,7 +512,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"移动侦测","level":"1.5.6","depth":2,"next":{"title":"音视频流","level":"1.5.7","depth":2,"path":"sdk-api/stream.md","ref":"sdk-api/stream.md","articles":[]},"previous":{"title":"云存储","level":"1.5.5","depth":2,"path":"sdk-api/cloud.md","ref":"sdk-api/cloud.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/motion.md","mtime":"2020-07-18T06:17:45.023Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-03T08:50:35.425Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"移动侦测","level":"1.5.6","depth":2,"next":{"title":"音视频流","level":"1.5.7","depth":2,"path":"sdk-api/stream.md","ref":"sdk-api/stream.md","articles":[]},"previous":{"title":"云存储","level":"1.5.5","depth":2,"path":"sdk-api/cloud.md","ref":"sdk-api/cloud.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/motion.md","mtime":"2020-08-06T06:53:11.645Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-08-06T07:23:57.776Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

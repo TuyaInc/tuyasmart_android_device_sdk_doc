@@ -131,7 +131,6 @@ public interface IMediaTransManager {
      * 当门铃按下时device端发送门铃呼叫到App端和云端. 此时呼叫界面显示为本地视频画面
      * @param data 发送呼叫时需要附带一张图片
      * @param snapType 图片的类型 {@link Common.NOTIFICATION_CONTENT_TYPE_E}
-     * 视频，.mp4文件 NOTIFICATION_CONTENT_MP4
      * 图片，.jpeg文件 NOTIFICATION_CONTENT_JPEG
      * 图片，.png文件 NOTIFICATION_CONTENT_PNG
      * @return 0: success !0: failed
