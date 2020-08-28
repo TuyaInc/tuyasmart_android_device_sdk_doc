@@ -13,6 +13,8 @@ Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](h
 
 > 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
 
+* **IPC\_SDK for v1.1.6 \(2020-8-28\)**
+	* 修复底层p2p崩溃
 * **IPC\_SDK for v1.1.5 \(2020-7-30\)**
 	* 支持自定义DNS解析接口
 * **IPC\_SDK for v1.1.3 \(2020-7-29\)**
