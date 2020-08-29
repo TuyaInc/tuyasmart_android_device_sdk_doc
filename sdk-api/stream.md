@@ -137,6 +137,19 @@ public interface IMediaTransManager {
      * */
     int sendDoorBellCallForPress(@Nullable byte[] data, int snapType);
 	
+	
+	/**
+     * 获取p2p状态信息
+     * @return {@link P2PConnectInfo}
+     */
+    P2PConnectInfo[] getP2PConnInfos();
+    
+    public class P2PConnectInfo {
+    	int p2p_mode;    //0: P2P mode, 1: Relay mode, 2: LAN mode, 255: Not connected.
+    	int local_nat_type;  //The local NAT type, 0: Unknown type, 1: Type 1, 2: Type 2, 3: Type 3, 10: TCP only
+    	int remote_nat_type; //The remote NAT type, 0: Unknown type, 1: Type 1, 2: Type 2, 3: Type 3, 10: TCP only
+    	int relay_type;  //0: Not Relay, 1: UDP Relay, 2: TCP Relay
+    }
 }
 
 ```
