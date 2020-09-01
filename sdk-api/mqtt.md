@@ -46,14 +46,6 @@ public interface IMqttProcessManager {
     public boolean disableLowPower();
 
     /**
-
-     * 主动发送MQTT消息
-     * @param protocol  协议编号
-     * @param jsonString    消息体
-     */
-    public void sendMqttMsg(int protocol, String jsonString);
-
-    /**
      * 注册接收MQTT消息
      * @param protocol  协议编号
      * @param callback  消息回调
