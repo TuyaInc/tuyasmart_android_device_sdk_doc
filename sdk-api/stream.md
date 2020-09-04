@@ -13,23 +13,6 @@ public interface IMediaTransManager {
      * @return success: 0 fase: !0
      * */
     int startMultiMediaTrans(int max);
-    
-    /**
-     * 关闭多媒体传输通道.
-     * 该方法调用之后，所有的传输通道都被关闭，多媒体流无法push到client端，也无法接受Mqtt消息
-     * @return success: 0 fase: !0
-     * */
-    int stopMultiMediaTrans();
-
-    /**
-     * 关闭多媒体传输通道.
-     * 设备端通过该方法可以主动发起呼叫挂断，然后重新开启p2p 通道.
-     * 因为关闭通道之后，多媒体流无法push到client端，也无法接受Mqtt消息. 所以，发起主动挂断呼叫之后，需要重新开启此通道.
-     * @param max 接收并发量
-     * @return success: 0 fase: !0
-     * */
-    int stopAndRestartMultiMediaTrans(int max);
-   
    
    /**
      * 码流通道类型
