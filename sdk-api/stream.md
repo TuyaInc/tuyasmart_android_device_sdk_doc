@@ -54,6 +54,31 @@ public interface IMediaTransManager {
     int pushMediaStream(int streamType, int nalType, byte[] streamData);
     
     /**
+     * 开启/关闭 连续本地存储，开启后自动生成本地录像。录像存储路径为激活设备时传入的 recordPath
+     * @param enable 是否开启
+     * @return 执行结果
+     */
+    boolean autoLocalStorage(boolean enable);
+    
+    /**
+     * 开启事件本地存储。录像存储路径为激活设备时传入的 recordPath
+     * @return 是否执行成功
+     */
+    boolean startLocalStorage();
+
+    /**
+     * 结束事件本地存储
+     * @return 是否执行成功
+     */
+    boolean stopLocalStorage();
+
+    /**
+     * 本地存储清除
+     */
+    void cleanLocalStorage();
+    
+    
+    /**
      * 注册对讲回调接口
      * 该接口将回调对讲时的音频数据
      * @param cb
