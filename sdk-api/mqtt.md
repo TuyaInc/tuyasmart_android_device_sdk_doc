@@ -45,19 +45,5 @@ public interface IMqttProcessManager {
      */
     public boolean disableLowPower();
 
-    /**
-     * 注册接收MQTT消息
-     * @param protocol  协议编号
-     * @param callback  消息回调
-     * @param <T>   接收消息的类型(MQTT消息结构的data字段)
-     */
-    public <T> void registerMqttMsg(int protocol, MqttMsgCallback<T> callback);
-
-    /**
-     * 反注册
-     * @param protocol  协议编号
-     */
-    public void unregisterMqttMsg(int protocol);
-
 }
 ```
