@@ -72,6 +72,21 @@ public interface IFeatureManager {
      * */
     int notifyDoorBellEvent(int notifyType, byte[] picData, int picType);
 
+   /**
+     * 初始化门铃特性相关环境.
+     * 若要接受呼叫的接听状态反馈，则必须调用该接口，否则无法接收
+     * @return 0: success !0: failed
+   * */
+    int initDoorBellFeatureEnv();
+
+   /**
+     * 销毁门铃特性相关环境.
+     * 此方法调用后，门铃相关特性不在可用
+     * @return 0: success !0: failed
+   * */
+    int deInitDoorBellFeatureEnv();
+
+
     /**
      * 门铃事件上报
      * */
