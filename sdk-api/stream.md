@@ -121,10 +121,26 @@ public interface IMediaTransManager {
         TRANS_SPEAKER_START(16),   /**对讲请求 */
         TRANS_SPEAKER_STOP(17);
         }
-        
+
+
+   /**
+     * 初始化门铃特性相关环境.
+     * 若要接受呼叫的接听状态反馈，则必须调用该接口，否则无法接收
+     * {@link IFeatureManager#deInitDoorBellFeatureEnv()}
+     * @return 0: success !0: failed
+   * */
+    int initDoorBellFeatureEnv();
+
+   /**
+     * 销毁门铃特性相关环境.
+     * 此方法调用后，门铃相关特性不在可用{@link IFeatureManager#initDoorBellFeatureEnv()}
+     * @return 0: success !0: failed
+   * */
+    int deInitDoorBellFeatureEnv();
+
    /**
      * 设置门铃呼叫状态回调接口
-     * 注该接口之后，将接收到门铃呼叫后的接听和挂断状态
+     * 注该接口之后，将接收到门铃呼叫后的接听和挂断状态(需要先初始化门铃环境)
      * 门铃呼叫报警接听状态：
      * status = -1 未知状态
      * status = 0 接听
