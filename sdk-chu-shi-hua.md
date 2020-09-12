@@ -271,7 +271,7 @@ mqttProcessManager.setMqttStatusChangedCallback(status -> {
      * @param streamType 媒体数据类型 {@link Common.ChannelIndex}
      * @param nalType 是视频流时，为H264码流的NAL类型（Common.NAL_TYPE.NAL_TYPE_IDR 或 Common.NAL_TYPE.NAL_TYPE_PB） 
      * 是音频流时，此参数无效，传0即可
-     * @param streamData 码流数据
+     * @param streamData 码流数据: 视频流为H264格式；音频流为PCM（8KHz/16bit/单声道）
      * @param timeStamp 每一帧数据产生的时间戳
      * */
     int pushMediaStream(int streamType, int nalType, byte[] streamData, long timeStamp);

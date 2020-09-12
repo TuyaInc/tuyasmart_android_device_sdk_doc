@@ -48,7 +48,7 @@ public interface IMediaTransManager {
      * push 一帧多媒体流到SDK
      * @param streamType 媒体数据类型 {@link Common.ChannelIndex}
      * @param nalType 是视频流时，为H264码流的nal类型. 是音频流时，此参数无效，默认为0
-     * @param streamData 码流数据
+     * @param streamData 码流数据: 视频流为H264格式；音频流为PCM（8KHz/16bit/单声道）
      * @return success: 0 fase: !0
      * */
     int pushMediaStream(int streamType, int nalType, byte[] streamData);
@@ -88,7 +88,7 @@ public interface IMediaTransManager {
     interface AudioTalkCallback {
     /**
      * 开启对讲后的数据回调接口
-     * @param data 对讲回调数据. 回调之后的数据格式为PCM
+     * @param data 对讲回调数据. 回调之后的数据格式为PCM（8KHz/16bit/单声道）
      * */
     	void onAudioTalkData(byte[] data);
 	}
