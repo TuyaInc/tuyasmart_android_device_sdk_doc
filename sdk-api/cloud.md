@@ -26,11 +26,26 @@ public interface IMediaTransManager {
      *
      * @param snap_buffer   jpeg 数据, 大小不超过100k
      * @param snapshot_size
-     * @param type          云存储时间类型
+     * @param type 云存储事件类型 {@link Common.DOORBELL_NOTIFICATION_TYPE}
      * @param maxDuration   云存储最大时间 单位 (秒)
      * @return 返回一个存储事件 event id
      */
     public int addCloudStorageEvent(byte[] snap_buffer, int snapshot_size, int type, int maxDuration);
+
+    /**
+    * 门铃事件上报
+    * */
+    public class Common.DOORBELL_NOTIFICATION_TYPE {
+        public static final int NOTIFICATION_NAME_MOTION = 0;             /* 移动侦测 */
+        public static final int NOTIFICATION_NAME_DOORBELL = 1;           /* 门铃按下 */
+        public static final int NOTIFICATION_NAME_DEV_LINK = 2;           /* IOT设备联动触发 */
+        public static final int NOTIFICATION_NAME_PASSBY = 3;             /* 正常经过 */
+        public static final int NOTIFICATION_NAME_LINGER = 4;            /* 异常逗留 */
+        public static final int NOTIFICATION_NAME_MESSAGE = 5;            /* 留言信息 */
+        public static final int NOTIFICATION_NAME_CALL_ACCEPT = 6;       /* 门铃接听 */
+        public static final int NOTIFICATION_NAME_CALL_NOT_ACCEPT = 7;    /* 门铃未接听 */
+        public static final int NOTIFICATION_NAME_HUMAN = 8;              /* 人形检测*/
+    }
 
     /**
      * 停止一个云存储事件（事件存储）
