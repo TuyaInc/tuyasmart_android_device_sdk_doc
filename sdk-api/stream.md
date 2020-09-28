@@ -110,19 +110,39 @@ public interface IMediaTransManager {
     
     //p2p事件定义
 	enum P2PEvent{
-        UNKNOW(-1),
-        TRANS_LIVE_VIDEO_START(0),  /**video 直播开始请求*/
-        TRANS_LIVE_VIDEO_STOP(1),   /**video 直播结束结束*/
-        TRANS_LIVE_AUDIO_START(2),  /**audio 直播开始请求*/
-        TRANS_LIVE_AUDIO_STOP(3),   /**audio 直播开始请求*/
+                UNKNOW(-1),
+                TRANS_LIVE_VIDEO_START(0),  /**video 直播开始请求*/
+                TRANS_LIVE_VIDEO_STOP(1),   /**video 直播结束请求*/
+                TRANS_LIVE_AUDIO_START(2),  /**audio 直播开始请求*/
+                TRANS_LIVE_AUDIO_STOP(3),   /**audio 直播结束请求*/
 
-        TRAN_VIDEO_CLARITY_SET(4), /**< 设置视频直播清晰度 ，参数为*/
+                TRAN_VIDEO_CLARITY_SET(4), /**< 设置视频直播清晰度 ，参数为*/
 
-        TRANS_SPEAKER_START(16),   /**对讲请求 */
-        TRANS_SPEAKER_STOP(17),
+                TRANS_LIVE_VIDEO_CLARITY_QUERY(5), /* query clarity informations*/
+                TRANS_LIVE_LOAD_ADJUST(6),
+                TRANS_PLAYBACK_LOAD_ADJUST(7),
+                TRANS_PLAYBACK_QUERY_MONTH_SIMPLIFY(8), /* query storage info of month  */
+                TRANS_PLAYBACK_QUERY_DAY_TS(9), /* query storage info of day */
 
-        TRANS_STREAMING_VIDEO_START(100),
-        TRANS_STREAMING_VIDEO_STOP(101);
+                TRANS_PLAYBACK_START_TS(10), /* start playback */
+                TRANS_PLAYBACK_PAUSE(11), /* pause playback */
+                TRANS_PLAYBACK_RESUME(12), /* resume playback */
+                TRANS_PLAYBACK_MUTE(13), /* mute playback */
+                TRANS_PLAYBACK_UNMUTE(14), /* unmute playback */
+                TRANS_PLAYBACK_STOP(15), /* stop playback */
+
+                TRANS_SPEAKER_START(16), /* start APP-to-IPC speak */
+                TRANS_SPEAKER_STOP(17),  /* stop APP-to-IPC speak */
+                TRANS_ABILITY_QUERY(18),/* query the alibity of audion video strraming */
+
+                TRANS_DOWNLOAD_START(19),   /* start to download */
+                TRANS_DOWNLOAD_STOP(20),
+                TRANS_DOWNLOAD_PAUSE(21),
+                TRANS_DOWNLOAD_RESUME(22),
+                TRANS_DOWNLOAD_CANCLE(23),
+
+                TRANS_STREAMING_VIDEO_START(100),
+                TRANS_STREAMING_VIDEO_STOP(101);
         }
 
    /**
