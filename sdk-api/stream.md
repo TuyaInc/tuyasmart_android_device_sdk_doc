@@ -119,7 +119,10 @@ public interface IMediaTransManager {
         TRAN_VIDEO_CLARITY_SET(4), /**< 设置视频直播清晰度 ，参数为*/
 
         TRANS_SPEAKER_START(16),   /**对讲请求 */
-        TRANS_SPEAKER_STOP(17);
+        TRANS_SPEAKER_STOP(17),
+
+        TRANS_STREAMING_VIDEO_START(100),
+        TRANS_STREAMING_VIDEO_STOP(101);
         }
 
    /**

@@ -1,0 +1,666 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DP控制 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="device.html" />
+    
+    
+    <link rel="prev" href="netconfig.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    涂鸦智能 Android IPC SDK 文档
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../sdk-chu-shi-hua.html">
+            
+                <a href="../sdk-chu-shi-hua.html">
+            
+                    
+                    SDK初始化
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../pei-wang-jie-ru/">
+            
+                <a href="../pei-wang-jie-ru/">
+            
+                    
+                    配网接入
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.html">
+            
+                <a href="../pei-wang-jie-ru/tong-guo-mqtt-xiao-xi-pei-wang.html">
+            
+                    
+                    通过MQTT消息配网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.html">
+            
+                <a href="../pei-wang-jie-ru/tong-guo-lan-ya-pei-wang.html">
+            
+                    
+                    通过蓝牙配网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../pei-wang-jie-ru/tong-guo-wifi-pei-wang.html">
+            
+                <a href="../pei-wang-jie-ru/tong-guo-wifi-pei-wang.html">
+            
+                    
+                    通过WiFi配网
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../pei-wang-jie-ru/reset.html">
+            
+                <a href="../pei-wang-jie-ru/reset.html">
+            
+                    
+                    配网解绑
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../sheng-ji-jie-kou-shuo-ming.html">
+            
+                <a href="../sheng-ji-jie-kou-shuo-ming.html">
+            
+                    
+                    升级接口说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="./">
+            
+                <a href="./">
+            
+                    
+                    SDK API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="mqtt.html">
+            
+                <a href="mqtt.html">
+            
+                    
+                    MQTT服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="netconfig.html">
+            
+                <a href="netconfig.html">
+            
+                    
+                    配网服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="dp.html">
+            
+                <a href="dp.html">
+            
+                    
+                    DP控制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="device.html">
+            
+                <a href="device.html">
+            
+                    
+                    设备信息
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="cloud.html">
+            
+                <a href="cloud.html">
+            
+                    
+                    云存储
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.6" data-path="motion.html">
+            
+                <a href="motion.html">
+            
+                    
+                    移动侦测
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.7" data-path="stream.html">
+            
+                <a href="stream.html">
+            
+                    
+                    音视频流
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.8" data-path="other.html">
+            
+                <a href="other.html">
+            
+                    
+                    其他API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../faq.html">
+            
+                <a href="../faq.html">
+            
+                    
+                    FAQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >DP控制</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="dp&#x63A7;&#x5236;"><div id="dp">DP&#x63A7;&#x5236;</div></h2>
+<pre><code class="lang-java">IControllerManager controllerManager = IPCServiceManager.getInstance()
+.getService(IPCServiceManager.IPCService.CONTROLLER_SERVICE);
+
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">IControllerManager</span> </span>{
+
+    <span class="hljs-comment">/**
+     * dp&#x4E0A;&#x62A5;&#x63A5;&#x53E3;&#xFF0C;&#x5728;&#x5904;&#x7406;&#x5B8C;dp&#x70B9;&#x4E4B;&#x540E;&#x56DE;&#x590D;&#x5BA2;&#x6237;&#x7AEF;
+     * <span class="hljs-doctag">@param</span> dpID dp&#x6807;&#x793A;
+     * <span class="hljs-doctag">@param</span> type &#x7C7B;&#x578B;
+     * Boolean DPConst.Type.PROP_BOOL
+     * Integer DPConst.Type.PROP_VALUE
+     * String DPConst.Type.PROP_STR
+     * Enum DPConst.Type.PROP_ENUM
+     * <span class="hljs-doctag">@param</span> pVal &#x503C; 
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">dpReport</span><span class="hljs-params">(<span class="hljs-keyword">int</span> dpID, <span class="hljs-keyword">int</span> type, Object pVal)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x57FA;&#x7840;&#x7684;DP&#x56DE;&#x8C03;&#x7C7B;
+     *
+     * <span class="hljs-doctag">@param</span> dpEventSimpleCallback
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setDpEventSimpleCallback</span><span class="hljs-params">(DPEventSimpleCallback dpEventSimpleCallback)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x590D;&#x6742;&#x7684;DP&#x5904;&#x7406;&#x7C7B;
+     *
+     * <span class="hljs-doctag">@param</span> callback
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setDPEventCallback</span><span class="hljs-params">(AbstractDPEventCallback callback)</span></span>;
+
+}
+
+<span class="hljs-comment">//dp&#x70B9;&#x5B9A;&#x4E49;</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DPEvent</span> </span>{
+
+    <span class="hljs-comment">/**
+     *  &#x72B6;&#x6001;&#x6307;&#x793A;&#x706F;,BOOL&#x7C7B;&#x578B;,true&#x6253;&#x5F00;,false&#x5173;&#x95ED;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_LIGHT = <span class="hljs-number">101</span>;
+    <span class="hljs-comment">/**
+     * &#x5F55;&#x5236;&#x753B;&#x9762;&#x7FFB;&#x8F6C;,BOOL&#x7C7B;&#x578B;,true&#x53CD;&#x8F6C;,false&#x6B63;&#x5E38;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_FLIP = <span class="hljs-number">103</span>;
+    <span class="hljs-comment">/**
+     * &#x89C6;&#x9891;&#x6C34;&#x5370;,BOOL&#x7C7B;&#x578B;,true&#x6253;&#x5F00;&#x6C34;&#x5370;,false&#x5173;&#x95ED;&#x6C34;&#x5370;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_WATERMARK = <span class="hljs-number">104</span>;
+
+    <span class="hljs-comment">/**
+     * type
+     */</span>
+    <span class="hljs-comment">/**
+     *  &#x4F11;&#x7720;,BOOL&#x7C7B;&#x578B;,true&#x4F11;&#x7720;,false&#x4E0D;&#x4F11;&#x7720;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SLEEP_MODE = <span class="hljs-number">105</span>;
+
+    <span class="hljs-comment">/**
+     * &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x62A5;&#x8B66;&#x7075;&#x654F;&#x5EA6;,ENUM&#x7C7B;&#x578B;,0&#x4E3A;&#x4F4E;&#x7075;&#x654F;&#x5EA6;,1&#x4E3A;&#x4E2D;&#x7075;&#x654F;&#x5EA6;,2&#x4E3A;&#x9AD8;&#x7075;&#x654F;&#x5EA6; {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.AlarmSensitivity}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_ALARM_SENSITIVITY = <span class="hljs-number">106</span>;
+
+    <span class="hljs-comment">/**
+     * &#x5BBD;&#x52A8;&#x6001;&#x8303;&#x56F4;&#x6A21;&#x5F0F;,BOOL&#x7C7B;&#x578B;,true&#x5219;&#x6253;&#x5F00;&#x5BBD;&#x52A8;&#x6001;&#x8303;&#x56F4;&#x6A21;&#x5F0F;,false&#x5219;&#x5173;&#x95ED;&#x5BBD;&#x52A8;&#x6001;&#x8303;&#x56F4;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_WDR = <span class="hljs-number">107</span>;
+
+    <span class="hljs-comment">/**
+     * &#x7EA2;&#x5916;&#x591C;&#x89C6;&#x529F;&#x80FD;,ENUM&#x7C7B;&#x578B;,0-&#x81EA;&#x52A8; 1-&#x5173; 2-&#x5F00; {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.NightMode}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_NIGHT_MODE = <span class="hljs-number">108</span>;
+
+    <span class="hljs-comment">/**
+     *  SD&#x5361;&#x5BB9;&#x91CF;,STR&#x7C7B;&#x578B;,&quot;&#x603B;&#x5BB9;&#x91CF;|&#x5F53;&#x524D;&#x4F7F;&#x7528;&#x91CF;|&#x5269;&#x4F59;&#x5BB9;&#x91CF;&quot;,&#x5355;&#x4F4D;&#xFF1A;kb
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_STORAGE_ONLY_GET = <span class="hljs-number">109</span>;
+
+    <span class="hljs-comment">/* APP&#x50A8;&#x5B58;&#x5361;&#x8BBE;&#x7F6E;&#x9875;&#x9762; */</span>
+    <span class="hljs-comment">/**
+     * SD&#x5361;&#x72B6;&#x6001;,VALUE&#x7C7B;&#x578B;,1-&#x6B63;&#x5E38;,2-&#x5F02;&#x5E38;,3-&#x7A7A;&#x95F4;&#x4E0D;&#x8DB3;,4-&#x6B63;&#x5728;&#x683C;&#x5F0F;&#x5316;,5-&#x65E0;SD&#x5361; {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.SDCardStatus}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_STATUS_ONLY_GET = <span class="hljs-number">110</span>;
+
+    <span class="hljs-comment">/**
+     * &#x683C;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x5361;,BOOL&#x7C7B;&#x578B;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_FORMAT = <span class="hljs-number">111</span>;
+
+    <span class="hljs-comment">/**
+     * &#x9000;&#x51FA;&#x5B58;&#x50A8;&#x5361;,BOOL&#x7C7B;&#x578B;,true&#x4E3A;&#x5B58;&#x50A8;&#x5361;&#x5DF2;&#x9000;&#x51FA;,false&#x4E3A;&#x5B58;&#x50A8;&#x5361;&#x672A;&#x9000;&#x51FA;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_UMOUNT = <span class="hljs-number">112</span>;
+
+    <span class="hljs-comment">/**
+     * &#x4E91;&#x53F0;&#x8F6C;&#x52A8;&#x505C;&#x6B62;,BOOL&#x7C7B;&#x578B;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_PTZ_STOP = <span class="hljs-number">116</span>;
+
+    <span class="hljs-comment">/**
+     * &#x683C;&#x5F0F;&#x5316;&#x5B58;&#x50A8;&#x5361;&#x72B6;&#x6001;,VALUE&#x7C7B;&#x578B;,-2000:SD&#x5361;&#x6B63;&#x5728;&#x683C;&#x5F0F;&#x5316;,-2001:SD&#x5361;&#x683C;&#x5F0F;&#x5316;&#x5F02;&#x5E38;,-2002:&#x65E0;SD&#x5361;,-2003:SD&#x5361;&#x9519;&#x8BEF;.&#x6B63;&#x6570;&#x4E3A;&#x683C;&#x5F0F;&#x5316;&#x8FDB;&#x5EA6; {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.FormatStatus}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_FORMAT_STATUS_ONLY_GET = <span class="hljs-number">117</span>;
+
+    <span class="hljs-comment">/* APP&#x6444;&#x50CF;&#x5934;&#x63A7;&#x5236;&#x9875;&#x9762; */</span>
+    <span class="hljs-comment">/**
+     * &#x4E91;&#x53F0;&#x8F6C;&#x52A8;&#x5F00;&#x59CB;,ENUM&#x7C7B;&#x578B;,0-&#x4E0A;,1-&#x53F3;&#x4E0A;,2-&#x53F3;,3-&#x53F3;&#x4E0B;,4-&#x4E0B;,5-&#x5DE6;&#x4E0B;,6-&#x5DE6;,7-&#x5DE6;&#x4E0A;  {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.PTZControl}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_PTZ_CONTROL = <span class="hljs-number">119</span>;
+
+    <span class="hljs-comment">/**
+     * &#x6444;&#x50CF;&#x673A;&#x6821;&#x51C6;,BOOL&#x7C7B;&#x578B;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_CALIBRATION = <span class="hljs-number">132</span>;
+    <span class="hljs-comment">/* APP&#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x62A5;&#x8B66;&#x9875;&#x9762; */</span>
+    <span class="hljs-comment">/**
+     * &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x62A5;&#x8B66;&#x529F;&#x80FD;&#x5F00;&#x5173;,BOOL&#x7C7B;&#x578B;,true&#x6253;&#x5F00;,false&#x5173;&#x95ED;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_ALARM_FUNCTION = <span class="hljs-number">134</span>;
+
+    <span class="hljs-comment">/* IPC&#x7279;&#x6B8A;&#x529F;&#x80FD; */</span>
+    <span class="hljs-comment">/**
+     * &#x95E8;&#x94C3;&#x547C;&#x53EB;,STR&#x7C7B;&#x578B;,&quot;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&quot;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_DOOR_BELL = <span class="hljs-number">136</span>;
+    <span class="hljs-comment">/**
+     * &#x7279;&#x6B8A;&#x706F;&#x5149;&#x63A7;&#x5236;&#x5F00;&#x5173;,BOOL&#x7C7B;&#x578B;,true&#x6253;&#x5F00;,false&#x5173;&#x95ED;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_BLUB_SWITCH = <span class="hljs-number">138</span>;
+    <span class="hljs-comment">/**
+     * &#x5206;&#x8D1D;&#x68C0;&#x6D4B;&#x529F;&#x80FD;&#x5F00;&#x5173;,BOOL&#x7C7B;&#x578B;,true&#x6253;&#x5F00;,false&#x5173;&#x95ED;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SOUND_DETECT = <span class="hljs-number">139</span>;
+    <span class="hljs-comment">/**
+     * &#x5206;&#x8D1D;&#x68C0;&#x6D4B;&#x7075;&#x654F;&#x5EA6;,ENUM&#x7C7B;&#x578B;,0&#x4EE3;&#x8868;&#x4F4E;&#x7075;&#x654F;&#x5EA6;,1&#x4EE3;&#x8868;&#x9AD8;&#x7075;&#x654F;&#x5EA6; {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.SoundSensitivity}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SOUND_SENSITIVITY = <span class="hljs-number">140</span>;
+    <span class="hljs-comment">/**
+     * &#x5206;&#x8D1D;&#x62A5;&#x8B66;&#x901A;&#x9053;,STR&#x7C7B;&#x578B;,&quot;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x6233;&quot;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SOUND_ALARM = <span class="hljs-number">141</span>;
+    <span class="hljs-comment">/**
+     * &#x6E29;&#x5EA6;&#x68C0;&#x6D4B;,VALUE&#x7C7B;&#x578B;,[0-50]
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_TEMPERATURE = <span class="hljs-number">142</span>;
+    <span class="hljs-comment">/**
+     * &#x6E7F;&#x5EA6;&#x68C0;&#x6D4B;,VALUE&#x7C7B;&#x578B;,[0-100]
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_HUMIDITY = <span class="hljs-number">143</span>;
+    <span class="hljs-comment">/**
+     * &#x7535;&#x6C60;&#x7535;&#x91CF;(&#x767E;&#x5206;&#x6BD4;),VALUE&#x7C7B;&#x578B;,[0-100]
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_ELECTRICITY = <span class="hljs-number">145</span>;
+    <span class="hljs-comment">/**
+     * &#x4F9B;&#x7535;&#x65B9;&#x5F0F;,ENUM&#x7C7B;&#x578B;,&quot;0&quot;&#x4E3A;&#x7535;&#x6C60;&#x4F9B;&#x7535;&#x72B6;&#x6001;,&quot;1&quot;&#x4E3A;&#x63D2;&#x7535;&#x4F9B;&#x7535;&#x72B6;&#x6001;(&#x6216;&#x7535;&#x6C60;&#x5145;&#x7535;&#x72B6;&#x6001;)   {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.PowerMode}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_POWERMODE = <span class="hljs-number">146</span>;
+    <span class="hljs-comment">/**
+     * &#x4F4E;&#x7535;&#x544A;&#x8B66;&#x9608;&#x503C;(&#x767E;&#x5206;&#x6BD4;),VALUE&#x7C7B;&#x578B;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_LOWELECTRIC = <span class="hljs-number">147</span>;
+
+    <span class="hljs-comment">/**
+     * SD&#x5361;&#x5F55;&#x50CF;&#x529F;&#x80FD;&#x4F7F;&#x80FD;,BOOL&#x7C7B;&#x578B;,true&#x6253;&#x5F00;,false&#x5173;&#x95ED;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_RECORD_ENABLE = <span class="hljs-number">150</span>;
+    <span class="hljs-comment">/**
+     * SD&#x5361;&#x5F55;&#x50CF;&#x6A21;&#x5F0F;&#x9009;&#x62E9;,ENUM&#x7C7B;&#x578B;,1-&#x4E8B;&#x4EF6;&#x5F55;&#x50CF; 2-&#x8FDE;&#x7EED;&#x5F55;&#x50CF; {<span class="hljs-doctag">@link</span> com.tuya.smart.aiipc.ipc_sdk.callback.DPConst.SDRecordMode}
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_SD_RECORD_MODE = <span class="hljs-number">151</span>;
+
+    <span class="hljs-comment">/**
+     * &#x95E8;&#x94C3;-&#x6293;&#x62CD;&#x56FE;&#x7247;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_DOOR_BELL_SNAP = <span class="hljs-number">154</span>;
+
+
+    <span class="hljs-comment">//AI</span>
+    <span class="hljs-comment">/**
+     * &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x62A5;&#x8B66;&#x533A;&#x57DF;&#x5F00;&#x5173;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_MOTION_AREA_SWITCH = <span class="hljs-number">168</span>;
+    <span class="hljs-comment">/**
+     * &#x79FB;&#x52A8;&#x4FA6;&#x6D4B;&#x62A5;&#x8B66;&#x533A;&#x57DF;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_MOTION_AREA = <span class="hljs-number">169</span>;
+    <span class="hljs-comment">/**
+     * &#x4EBA;&#x884C;&#x8FC7;&#x6EE4;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_HUMANOID_FILTER = <span class="hljs-number">170</span>;
+    <span class="hljs-comment">/**
+     * &#x544A;&#x8B66;&#x6D88;&#x606F;-&#x4E0A;&#x62A5;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_ALARM_MESSAGE = <span class="hljs-number">185</span>;
+    <span class="hljs-comment">/**
+     * AI&#x4EBA;&#x8138;&#x8BC6;&#x522B;&#x5F00;&#x5173;
+     */</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> TUYA_DP_AI_FR_SWITCH = <span class="hljs-number">186</span>;
+
+
+
+}
+</code></pre>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="netconfig.html" class="navigation navigation-prev " aria-label="Previous page: 配网服务">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="device.html" class="navigation navigation-next " aria-label="Next page: 设备信息">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DP控制","level":"1.5.3","depth":2,"next":{"title":"设备信息","level":"1.5.4","depth":2,"path":"sdk-api/device.md","ref":"sdk-api/device.md","articles":[]},"previous":{"title":"配网服务","level":"1.5.2","depth":2,"path":"sdk-api/netconfig.md","ref":"sdk-api/netconfig.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/dp.md","mtime":"2020-09-08T08:35:53.573Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-28T08:55:44.199Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
