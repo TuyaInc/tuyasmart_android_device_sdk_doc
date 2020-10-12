@@ -20,18 +20,24 @@ public interface IControllerManager {
     int dpReport(int dpID, int type, Object pVal);
     
     /**
-     * 基础的DP回调类
+     * DP回调类
      *
      * @param dpEventSimpleCallback
      */
     void setDpEventSimpleCallback(DPEventSimpleCallback dpEventSimpleCallback);
 
-    /**
-     * 复杂的DP处理类
-     *
-     * @param callback
-     */
-    void setDPEventCallback(AbstractDPEventCallback callback);
+    public interface DPEventSimpleCallback {
+
+        /**
+         * dp接收
+         * @param v 值
+         * @param dpid dpid
+         * @param time_stamp 时间戳
+         * @return
+         */
+        DPConst.DPResult onDPEvent(Object v, int dpid, long time_stamp);
+
+    }
 
 }
 

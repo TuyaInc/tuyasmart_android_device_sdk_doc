@@ -86,20 +86,28 @@ public interface IFeatureManager {
    * */
     int deInitDoorBellFeatureEnv();
 
-
     /**
      * 门铃事件上报
-     * */
+     */
     public class DOORBELL_NOTIFICATION_TYPE {
         public static final int NOTIFICATION_NAME_MOTION = 0;             /* 移动侦测 */
         public static final int NOTIFICATION_NAME_DOORBELL = 1;           /* 门铃按下 */
-        public static final int NOTIFICATION_NAME_DEV_LINK = 2;           /* IOT设备联动触发 */
+        public static final int NOTIFICATION_NAME_DEV_LINK = 2;           /* IOT设备联动触发(该类型由云端下发，不能主动触发) */
         public static final int NOTIFICATION_NAME_PASSBY = 3;             /* 正常经过 */
-        public static final int NOTIFICATION_NAME_LINGER = 4;            /* 异常逗留 */
+        public static final int NOTIFICATION_NAME_LINGER = 4;             /* 异常逗留 */
         public static final int NOTIFICATION_NAME_MESSAGE = 5;            /* 留言信息 */
-        public static final int NOTIFICATION_NAME_CALL_ACCEPT = 6;       /* 门铃接听 */
+        public static final int NOTIFICATION_NAME_CALL_ACCEPT = 6;        /* 门铃接听 */
         public static final int NOTIFICATION_NAME_CALL_NOT_ACCEPT = 7;    /* 门铃未接听 */
-        public static final int NOTIFICATION_NAME_HUMAN = 8;              /* 人形检测*/
+        public static final int NOTIFICATION_NAME_CALL_REFUSE = 8;        /* 门铃拒绝接听 */
+        public static final int NOTIFICATION_NAME_HUMAN = 9;              /* 人形检测 */
+        public static final int NOTIFICATION_NAME_PCD = 10;               /* 宠物检测 */
+        public static final int NOTIFICATION_NAME_CAR = 11;               /* 车辆检测 */
+        public static final int NOTIFICATION_NAME_BABY_CRY = 12;          /* 婴儿哭声 */
+        public static final int NOTIFICATION_NAME_ABNORMAL_SOUND = 13;    /* 声音异响 */
+        public static final int NOTIFICATION_NAME_FACE = 14;              /* 人脸检测 */
+        public static final int NOTIFICATION_NAME_ANTIBREAK = 15;         /* 强拆告警 */
+        public static final int NOTIFICATION_NAME_RECORD_ONLY = 16;       /* 占位，无意义 */
+        public static final int NOTIFICATION_NAME_IO_ALARM =17;           /* 本地IO设备触发 */
     }
 
 }
