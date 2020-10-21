@@ -14,7 +14,8 @@ public interface IControllerManager {
      * Integer DPConst.Type.PROP_VALUE
      * String DPConst.Type.PROP_STR
      * Enum DPConst.Type.PROP_ENUM
-     * @param pVal 值 
+     * Bitmap DPConst.Type.PROP_BITMAP
+     * @param pVal 值
      * @return
      */
     int dpReport(int dpID, int type, Object pVal);
