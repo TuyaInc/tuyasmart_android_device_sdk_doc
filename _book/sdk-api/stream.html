@@ -490,19 +490,39 @@
 
     <span class="hljs-comment">//p2p&#x4E8B;&#x4EF6;&#x5B9A;&#x4E49;</span>
     <span class="hljs-keyword">enum</span> P2PEvent{
-        UNKNOW(-<span class="hljs-number">1</span>),
-        TRANS_LIVE_VIDEO_START(<span class="hljs-number">0</span>),  <span class="hljs-comment">/**video &#x76F4;&#x64AD;&#x5F00;&#x59CB;&#x8BF7;&#x6C42;*/</span>
-        TRANS_LIVE_VIDEO_STOP(<span class="hljs-number">1</span>),   <span class="hljs-comment">/**video &#x76F4;&#x64AD;&#x7ED3;&#x675F;&#x7ED3;&#x675F;*/</span>
-        TRANS_LIVE_AUDIO_START(<span class="hljs-number">2</span>),  <span class="hljs-comment">/**audio &#x76F4;&#x64AD;&#x5F00;&#x59CB;&#x8BF7;&#x6C42;*/</span>
-        TRANS_LIVE_AUDIO_STOP(<span class="hljs-number">3</span>),   <span class="hljs-comment">/**audio &#x76F4;&#x64AD;&#x5F00;&#x59CB;&#x8BF7;&#x6C42;*/</span>
+                UNKNOW(-<span class="hljs-number">1</span>),
+                TRANS_LIVE_VIDEO_START(<span class="hljs-number">0</span>),  <span class="hljs-comment">/**video &#x76F4;&#x64AD;&#x5F00;&#x59CB;&#x8BF7;&#x6C42;*/</span>
+                TRANS_LIVE_VIDEO_STOP(<span class="hljs-number">1</span>),   <span class="hljs-comment">/**video &#x76F4;&#x64AD;&#x7ED3;&#x675F;&#x8BF7;&#x6C42;*/</span>
+                TRANS_LIVE_AUDIO_START(<span class="hljs-number">2</span>),  <span class="hljs-comment">/**audio &#x76F4;&#x64AD;&#x5F00;&#x59CB;&#x8BF7;&#x6C42;*/</span>
+                TRANS_LIVE_AUDIO_STOP(<span class="hljs-number">3</span>),   <span class="hljs-comment">/**audio &#x76F4;&#x64AD;&#x7ED3;&#x675F;&#x8BF7;&#x6C42;*/</span>
 
-        TRAN_VIDEO_CLARITY_SET(<span class="hljs-number">4</span>), <span class="hljs-comment">/**&lt; &#x8BBE;&#x7F6E;&#x89C6;&#x9891;&#x76F4;&#x64AD;&#x6E05;&#x6670;&#x5EA6; &#xFF0C;&#x53C2;&#x6570;&#x4E3A;*/</span>
+                TRAN_VIDEO_CLARITY_SET(<span class="hljs-number">4</span>), <span class="hljs-comment">/**&lt; &#x8BBE;&#x7F6E;&#x89C6;&#x9891;&#x76F4;&#x64AD;&#x6E05;&#x6670;&#x5EA6; &#xFF0C;&#x53C2;&#x6570;&#x4E3A;*/</span>
 
-        TRANS_SPEAKER_START(<span class="hljs-number">16</span>),   <span class="hljs-comment">/**&#x5BF9;&#x8BB2;&#x8BF7;&#x6C42; */</span>
-        TRANS_SPEAKER_STOP(<span class="hljs-number">17</span>),
+                TRANS_LIVE_VIDEO_CLARITY_QUERY(<span class="hljs-number">5</span>), <span class="hljs-comment">/* query clarity informations*/</span>
+                TRANS_LIVE_LOAD_ADJUST(<span class="hljs-number">6</span>),
+                TRANS_PLAYBACK_LOAD_ADJUST(<span class="hljs-number">7</span>),
+                TRANS_PLAYBACK_QUERY_MONTH_SIMPLIFY(<span class="hljs-number">8</span>), <span class="hljs-comment">/* query storage info of month  */</span>
+                TRANS_PLAYBACK_QUERY_DAY_TS(<span class="hljs-number">9</span>), <span class="hljs-comment">/* query storage info of day */</span>
 
-        TRANS_STREAMING_VIDEO_START(<span class="hljs-number">100</span>),
-        TRANS_STREAMING_VIDEO_STOP(<span class="hljs-number">101</span>);
+                TRANS_PLAYBACK_START_TS(<span class="hljs-number">10</span>), <span class="hljs-comment">/* start playback */</span>
+                TRANS_PLAYBACK_PAUSE(<span class="hljs-number">11</span>), <span class="hljs-comment">/* pause playback */</span>
+                TRANS_PLAYBACK_RESUME(<span class="hljs-number">12</span>), <span class="hljs-comment">/* resume playback */</span>
+                TRANS_PLAYBACK_MUTE(<span class="hljs-number">13</span>), <span class="hljs-comment">/* mute playback */</span>
+                TRANS_PLAYBACK_UNMUTE(<span class="hljs-number">14</span>), <span class="hljs-comment">/* unmute playback */</span>
+                TRANS_PLAYBACK_STOP(<span class="hljs-number">15</span>), <span class="hljs-comment">/* stop playback */</span>
+
+                TRANS_SPEAKER_START(<span class="hljs-number">16</span>), <span class="hljs-comment">/* start APP-to-IPC speak */</span>
+                TRANS_SPEAKER_STOP(<span class="hljs-number">17</span>),  <span class="hljs-comment">/* stop APP-to-IPC speak */</span>
+                TRANS_ABILITY_QUERY(<span class="hljs-number">18</span>),<span class="hljs-comment">/* query the alibity of audion video strraming */</span>
+
+                TRANS_DOWNLOAD_START(<span class="hljs-number">19</span>),   <span class="hljs-comment">/* start to download */</span>
+                TRANS_DOWNLOAD_STOP(<span class="hljs-number">20</span>),
+                TRANS_DOWNLOAD_PAUSE(<span class="hljs-number">21</span>),
+                TRANS_DOWNLOAD_RESUME(<span class="hljs-number">22</span>),
+                TRANS_DOWNLOAD_CANCLE(<span class="hljs-number">23</span>),
+
+                TRANS_STREAMING_VIDEO_START(<span class="hljs-number">100</span>),
+                TRANS_STREAMING_VIDEO_STOP(<span class="hljs-number">101</span>);
         }
 
    <span class="hljs-comment">/**
@@ -586,7 +606,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"音视频流","level":"1.5.7","depth":2,"next":{"title":"其他API","level":"1.5.8","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"previous":{"title":"移动侦测","level":"1.5.6","depth":2,"path":"sdk-api/motion.md","ref":"sdk-api/motion.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/stream.md","mtime":"2020-09-28T08:55:34.466Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-09-28T08:55:44.199Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"音视频流","level":"1.5.7","depth":2,"next":{"title":"其他API","level":"1.5.8","depth":2,"path":"sdk-api/other.md","ref":"sdk-api/other.md","articles":[]},"previous":{"title":"移动侦测","level":"1.5.6","depth":2,"path":"sdk-api/motion.md","ref":"sdk-api/motion.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"sdk-api/stream.md","mtime":"2020-09-28T09:19:48.412Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2020-11-09T08:57:13.179Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>

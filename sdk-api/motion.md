@@ -107,7 +107,12 @@ public interface IFeatureManager {
         public static final int NOTIFICATION_NAME_FACE = 14;              /* 人脸检测 */
         public static final int NOTIFICATION_NAME_ANTIBREAK = 15;         /* 强拆告警 */
         public static final int NOTIFICATION_NAME_RECORD_ONLY = 16;       /* 占位，无意义 */
-        public static final int NOTIFICATION_NAME_IO_ALARM =17;           /* 本地IO设备触发 */
+        public static final int NOTIFICATION_NAME_IO_ALARM = 17;           /* 本地IO设备触发 */
+        public static final int NOTIFICATION_NAME_LOW_BATTERY = 18;       /* 低电量*/
+        public static final int NOTIFICATION_NAME_NOUSE = 19;             /* 忽略*/
+        public static final int NOTIFICATION_NAME_COVER = 20;             /* 封面 */
+        public static final int NOTIFICATION_NAME_FULL_BATTERY = 21;      /* 电量满 */
+        public static final int NOTIFICATION_NAME_USER_IO = 22;           /* 本地IO设备触发-2 */
     }
 
 }
