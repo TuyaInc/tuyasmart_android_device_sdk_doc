@@ -233,8 +233,9 @@ IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPC
 /**
  * 激活SDK
  * @param token 配网获得的token
- * @param basePath 可写的一个路径，用于存储SDK相关的配置
- * @param recordPath 可写的一个路径，用于存储录像
+ * @param basePath 用于存储SDK相关的配置，路径不存在时SDK会自动创建
+ * @param recordPath 用于存储录像，路径不存在时SDK会自动创建
+ * 注意：路径参数不要使用类似"/sdcard/"的一级目录以免造成文件误删除
  * @param productId 产品Id
  * @param uuid  每个设备的SN
  * @param authorKey 授权的码
