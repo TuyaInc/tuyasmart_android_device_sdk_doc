@@ -9,7 +9,7 @@ description: Android物联网应用接入涂鸦平台所使用的SDK
 <!---* [minSdkVersion >= Anroid N](assets/24/ipc-sdk.zip)--->
 <!---* [minSdkVersion >= 22](assets/22/ipc-sdk.zip)--->
 
-Demo 地址 [https://github.com/TuyaInc/tuyasmart\_android\_device\_sdk\_demo](https://github.com/TuyaInc/tuyasmart_android_device_sdk_demo)
+Demo 地址 [https://github.com/tuya/tuya-iotos-android-ipc-demo)
 
 > 提示：接入和使用可能遇到的一些常见问题，在<a href="./faq.md">FAQ</a>都有记录，遇到困难可以先查看一下：）
 
