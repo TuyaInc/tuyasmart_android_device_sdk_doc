@@ -41,30 +41,6 @@ INetConfigManager.setUserId(String userId);
 
 ### **4. 设置配网回调初始化SDK**
 
-#### **仅配网接入：**
-
-```java
-iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
-            @Override
-            public void configOver(boolean first, String token) {
-            IMediaTransManager transManager = IPCServiceManager.getInstance().getService(IPCServiceManager.IPCService.MEDIA_TRANS_SERVICE);
-            
-
-				/**
-			     * 初始化流传输SDK, 关闭了p2p验证
-			     * @param token 配网获得的token
-			     * @param productId 产品Id
-			     * @param uuid  每个设备的SN
-			     * @param authorKey 授权的码
-			     */
-            transManager.initIoTSDK(token, productId, uuid, authorKey);
-
-            }
-        });
-```
-
-#### 接入IPC：
-
 ```java
 iNetConfigManager.configNetInfo(new INetConfigManager.NetConfigCallback() {
             @Override
